@@ -1,0 +1,2 @@
+SRC = megaphone.cpp
+
