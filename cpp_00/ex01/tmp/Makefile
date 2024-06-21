@@ -1,4 +1,4 @@
-NAME = phonebook
+NAME = Sample1-2.class
 CC = c++
 L_FLAGS = -g
 C_FLAGS = -Wall -Wextra -Werror -std=c++98 -g
@@ -15,9 +15,13 @@ $(NAME): 	$(OBJS)
 			$(CC) $(C_FLAGS) -c $< -o $@
 
 clean:
-			rm -f $(OBJS)
+			rm -f $(OBJS) *.o
 
 fclean: 	clean
-			rm -f $(NAME)
+			rm -f $(NAME) a.out *.
 
 re: 		fclean all
+
+prn:
+			@echo $(SRCS)
+			@echo $(OBJS)

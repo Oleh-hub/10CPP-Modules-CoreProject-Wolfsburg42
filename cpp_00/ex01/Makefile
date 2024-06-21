@@ -22,5 +22,5 @@ fclean: 	clean
 
 re: 		fclean all
 
-print:
+prn:
 			@echo $(SRCS)
