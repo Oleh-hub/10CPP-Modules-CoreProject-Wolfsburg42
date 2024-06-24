@@ -2,8 +2,9 @@ NAME = phonebook
 CC = c++
 L_FLAGS = -g
 C_FLAGS = -Wall -Wextra -Werror -std=c++98 -g
+C_FLAGS += -Wno-unused
 
-SRCS = $(shell find . -not -path './tmp/*' -name '*.cpp')
+SRCS = $(shell find . -not -path './training/*' -name '*.cpp')
 OBJS = $(SRCS:.cpp=.o)
 
 all: 		$(NAME)
