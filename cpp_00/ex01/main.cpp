@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:16:08 by oruban            #+#    #+#             */
-/*   Updated: 2024/06/25 19:32:41 by oruban           ###   ########.fr       */
+/*   Updated: 2024/06/26 11:29:21 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int main(void)
 	while (true)
 	{
 		std::cout << "Please enter a command ('ADD', 'SEARCH' or 'EXIT'): ";
-		getline(std::cin, command);
+		std::getline(std::cin, command);
 		std::cout << "Command '" << command << "' was entered" << std::endl;
 		if (command == "ADD")
-		
+			;
 		if (command == "EXIT")
 			break;
 	}
