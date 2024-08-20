@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 11:25:13 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/20 16:17:07 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/20 16:18:41 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int main(int argc, char **argv)
 	// 2 implement the string approuch I got by google "iterate over c++ string" an ref on stockoverflow "How would I do a for loop on every character in string in C++?"
 	for (int i = 1; i < argc; i++)
 	{
-		std::string str = argv[i]; // demanded work with string
+		std::string str = argv[i]; // subj demanded "work with string"
 		for(std::string::iterator it = str.begin(); it != str.end(); ++it) 
-			std::cout << (char) std::toupper(*it); // demanded work with upper
+			std::cout << (char) std::toupper(*it); // subj demanded "work with upper"
 		std::cout << ' ';
 	}
 	std::cout << std::endl; // std::cout << '\n';
