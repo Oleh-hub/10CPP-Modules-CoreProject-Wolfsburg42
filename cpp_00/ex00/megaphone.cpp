@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 11:25:13 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/20 16:10:24 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/20 16:17:07 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 
 #include <iostream> // For std::cout, std::endl
 #include <cctype>	// For std::toupper()
+//  the next header is inclusion may be ommitted because the iostream headeer as a header of C++ standardd library includes it indirectly
+#include <string>	// For std::string, str.begin(), str.end().
 
 int main(int argc, char **argv)
 {
