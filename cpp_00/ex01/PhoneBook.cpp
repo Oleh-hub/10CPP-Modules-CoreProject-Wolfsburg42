@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:48:03 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/21 18:15:52 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/21 20:07:34 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,15 @@ void PhoneBook::addContact(void) {
 	new_contact.setNickname(getInput("nickname"));
 	if (new_contact.getNickname().empty())
 		return;
+	new_contact.setPhoneNumber(inputPhoneNumber());
+	if (new_contact.getPhoneNumber().empty())
+		return;
+		
 	std::cout << new_contact.getFirstName() << std::endl; //tracing
 	std::cout << new_contact.getLastName() << std::endl; //tracing
 	std::cout << new_contact.getNickname() << std::endl; //tracing
+	std::cout << new_contact.getNickname() << std::endl; //tracing
+	std::cout << new_contact.getPhoneNumber() << std::endl; //tracing
 }
 
 // is designed to reset the state of the standard input stream. 
@@ -52,10 +58,10 @@ void PhoneBook::resetInputStream(){
 
 std::string PhoneBook::getInput(std::string prompt) {
 	std::string input = "";
-		
+
 	std::cout << "Please enter " << prompt << ": ";
 	while (true) {
-		if (!std::getline(std::cin, input)){
+		if (!std::getline(std::cin, input)) {
 			if (std::cin.eof()) { // 4 example Ctrl+D
 				std::cout << "EOF was entered. Exiting entering " << prompt << std::endl;
 			}
@@ -70,5 +76,30 @@ std::string PhoneBook::getInput(std::string prompt) {
 			continue;
 		}
 		return input;
+	}
+}
+
+std::string PhoneBook::inputPhoneNumber(void){
+	std::string input = "";
+
+	std::cout << "Please enter phone number: ";
+	while (true) {
+		if (!std::getline(std::cin, input)) {
+			if (std::cin.eof()) // 4 example Ctrl+D
+				std::cout << "EOF was entered. Exiting entering phone number" << std::endl;
+			else
+				std::cerr << "Error reading input. Exiting." << std::endl;
+			std::cout << "Contact was not added! Try again." << std::endl;
+			resetInputStream();
+			return "";
+		}
+		if (input.empty()) {
+			std::cout << "Please, enter a valid (not empty) phone number: ";
+			continue;
+		}
+		if (input.find_first_not_of("0123456789") != std::string::npos)  // is allowed by subg?
+			std::cout << "Please, enter a valid phone number (only digits): ";
+		else
+			return input;
 	}
 }
