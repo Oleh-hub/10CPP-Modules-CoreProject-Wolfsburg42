@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:16:08 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/21 12:36:24 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/21 17:31:04 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
 	PhoneBook book;
 	std::string input;
 	
-	std::cout << "Phonebook is being run" << std::endl;
+	// std::cout << "Phonebook is being run" << std::endl; //tracing
 	while (true)
 	{
 		std::cout << "Please enter a command (1.'ADD', 2.'SEARCH' or 3.'EXIT'): ";
@@ -34,13 +34,14 @@ int main(void)
 				return 1;
 			}
 		}
-		std::cout << "Command '" << input << "' was entered" << std::endl;
+		// std::cout << "Command '" << input << "' was entered" << std::endl; //tracing
 		if (input == "EXIT" || input == "3")
 			break;
-		else if (input == "ADD" || input == "1") {
-			std::cout << "ADD command was entered" << std::endl;
+		else if (input == "ADD" || input == "1") { 	
+			// std::cout << "ADD command was entered" << std::endl; // tracing
 			book.addContact();
 		}
+		
 	}
 	
 }

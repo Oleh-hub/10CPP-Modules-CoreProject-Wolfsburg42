@@ -3,7 +3,9 @@
 
 # include "Contact.hpp"
 # include <iostream>
-# include <string> // is already included in STL's iostream 
+# include <string> // is already included in STL's iostream
+# include <limits> // std::numeric_limits
+# include <stdio.h> // clearerr
 
 class	PhoneBook {
 public:
