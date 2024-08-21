@@ -1,7 +1,7 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-# include <string>
+# include <string> //std::getline()
 
 class	Contact
 {
