@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:48:03 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/21 17:29:10 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/21 18:15:52 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,17 @@ void PhoneBook::addContact(void) {
 	std::string input;
 
 	new_contact.setFirstName(getInput("first name"));
-	// std::cout << new_contact.getFirstName() << std::endl; //tracing
-	
+	if (new_contact.getFirstName().empty())
+		return;
+	new_contact.setLastName(getInput("last name"));
+	if (new_contact.getLastName().empty())
+		return;
+	new_contact.setNickname(getInput("nickname"));
+	if (new_contact.getNickname().empty())
+		return;
+	std::cout << new_contact.getFirstName() << std::endl; //tracing
+	std::cout << new_contact.getLastName() << std::endl; //tracing
+	std::cout << new_contact.getNickname() << std::endl; //tracing
 }
 
 // is designed to reset the state of the standard input stream. 
@@ -57,7 +66,7 @@ std::string PhoneBook::getInput(std::string prompt) {
 			return "";
 		}
 		if (input.empty()) {
-			std::cout << "Please, enter a valid " << prompt << ": ";
+			std::cout << "Please, enter a valid (not empty) " << prompt << ": ";
 			continue;
 		}
 		return input;
