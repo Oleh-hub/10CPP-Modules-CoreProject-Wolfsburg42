@@ -16,7 +16,7 @@ public:
 
 private:
 	static const int _MAX_CONTACTS = 8;
-	// Contact contacts[MAX_CONTACTS];
+	Contact _contacts[_MAX_CONTACTS];
 	int _saved_contacts_size;
 	int _oldest_contact_index;
 	std::string _getInput(std::string prompt);

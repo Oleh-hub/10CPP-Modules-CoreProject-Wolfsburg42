@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:48:03 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/22 12:09:58 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/22 13:48:46 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ void PhoneBook::addContact(void) {
 	std::cout << "Nickname:		" << new_contact.getNickname() << std::endl;
 	std::cout << "Phone number:		" << new_contact.getPhoneNumber() << std::endl;
 	std::cout << "Darkest secret:		" << new_contact.getSecret() << std::endl;
+	 
+	_contacts[_oldest_contact_index % _MAX_CONTACTS] = new_contact; // elegant way to cycle through the array
+	_oldest_contact_index++;
+	if (_saved_contacts_size < _MAX_CONTACTS)
+		_saved_contacts_size++;
 }
 
 // is designed to reset the state of the standard input stream. 
