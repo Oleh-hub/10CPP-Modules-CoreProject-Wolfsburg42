@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:16:08 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/21 17:31:04 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/23 08:51:21 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ int main(void)
 		// std::cout << "Command '" << input << "' was entered" << std::endl; //tracing
 		if (input == "EXIT" || input == "3")
 			break;
-		else if (input == "ADD" || input == "1") { 	
-			// std::cout << "ADD command was entered" << std::endl; // tracing
+		if (input == "ADD" || input == "1")
 			book.addContact();
-		}
-		
+		if (input == "SEARCH" || input == "2")
+			// book.searchContact();
+			;
+		else
+			std::cout << "Invalid command. Please, try again." << std::endl;
 	}
 	
 }
