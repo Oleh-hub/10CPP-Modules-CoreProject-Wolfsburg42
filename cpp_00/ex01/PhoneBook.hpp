@@ -6,6 +6,7 @@
 # include <string> // is already included in STL's iostream
 # include <limits> // std::numeric_limits
 # include <stdio.h> // clearerr
+#include <iomanip> // std::setw
 
 class	PhoneBook {
 public:
@@ -21,11 +22,12 @@ private:
 	int _oldest_contact_index;
 	std::string _getInput(std::string prompt);
 	std::string _inputPhoneNumber(void);
-	std::string _truncateString(std::string &str, size_t width);
-	void _showCpntacts(void);
+	// std::string _truncateString(const std::string &str, size_t width);
+	std::string _truncateString(const std::string &str, size_t width);
+	void _showContacts(void);
 	void _showContactData(int index);
 	void _resetInputStream(void);
-	bool _isAllDigits(const std::string &str); // do not use it
+	// bool _isAllDigits(const std::string &str); // do not use it
 	int _inputSearchIndex(void);
 };
 #endif	// PHONEBOOK_HPP

@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:48:03 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/22 13:55:40 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/23 14:21:56 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,21 @@ void PhoneBook::addContact(void) {
 	if (_saved_contacts_size < _MAX_CONTACTS)
 		_saved_contacts_size++;
 }
+
+void PhoneBook::searchContact(void) {
+	
+	if (_saved_contacts_size == 0) {
+		std::cout << "No contacts to search for. Please, add (a) contact(s) first." << std::endl;
+		return;
+	}
+	_showContacts();
+	
+}
+
+/********************************************************************/
+/*                          PRIVATE                                 */
+/********************************************************************/
+
 
 // is designed to reset the state of the standard input stream. 
 // to clear any errors and discard any unwanted input that might be left in the input buffer.
@@ -111,4 +126,32 @@ std::string PhoneBook::_inputPhoneNumber(void){
 		else
 			return input;
 	}
+}
+
+// std::string PhoneBook::_truncateString(const std::string &str, size_t width) 
+std::string PhoneBook::_truncateString(const std::string &str, size_t width = 10) {
+	if (str.length() > width)
+		return str.substr(0, width - 1) + ".";
+	return str;
+}
+
+// shows contacts after '2. SEARCH' is selected
+void PhoneBook::_showContacts(void) {
+	std::cout << std::endl;
+	std::cout << std::setw(10) << "Index"
+			  << "|";
+	std::cout << std::setw(10) << "First name"
+			  << "|";
+	std::cout << std::setw(10) << "Last name"
+			  << "|";
+	std::cout << std::setw(10) << "Nickname"
+			  << "|" << std::endl;
+	for (int i = 0; i < _saved_contacts_size; i++) {
+		std::cout << std::setw(10) << (i + 1) << "|";
+		// std::cout << std::setw(10) << _truncateString(_contacts[i].getFirstName(), 10) << "|";
+		std::cout << std::setw(10) << _truncateString(_contacts[i].getFirstName(), 10) << "|";
+		std::cout << std::setw(10) << _truncateString(_contacts[i].getLastName(), 10) << "|";
+		std::cout << std::setw(10) << _truncateString(_contacts[i].getNickname(), 10) << "|" << std::endl;
+	}
+	std::cout << std::endl;
 }

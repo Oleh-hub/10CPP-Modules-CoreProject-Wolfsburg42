@@ -14,11 +14,11 @@ public:
 	void setSecret(std::string);
 
 	// Getters
-	const std::string &getFirstName(void);
-	const std::string &getLastName(void);
-	const std::string &getNickname(void);
-	const std::string &getPhoneNumber(void);
-	const std::string &getSecret(void);
+	const std::string &getFirstName(void) const;
+	const std::string &getLastName(void) const;
+	const std::string &getNickname(void) const;
+	const std::string &getPhoneNumber(void) const;
+	const std::string &getSecret(void) const;
 
 private:
 	// Member variables
