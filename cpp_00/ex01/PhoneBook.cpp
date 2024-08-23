@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:48:03 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/23 14:21:56 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/23 14:58:53 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,25 @@ void PhoneBook::addContact(void) {
 }
 
 void PhoneBook::searchContact(void) {
+	int index = 0;
 	
 	if (_saved_contacts_size == 0) {
 		std::cout << "No contacts to search for. Please, add (a) contact(s) first." << std::endl;
 		return;
 	}
 	_showContacts();
-	
+	index = _inputSearchIndex();
+	std::cout << "index= " << index << std::endl; //tracing
 }
 
 /********************************************************************/
 /*                          PRIVATE                                 */
 /********************************************************************/
 
+int PhoneBook::_inputSearchIndex(void) {
+
+	return 0;	
+}
 
 // is designed to reset the state of the standard input stream. 
 // to clear any errors and discard any unwanted input that might be left in the input buffer.
@@ -148,7 +154,6 @@ void PhoneBook::_showContacts(void) {
 			  << "|" << std::endl;
 	for (int i = 0; i < _saved_contacts_size; i++) {
 		std::cout << std::setw(10) << (i + 1) << "|";
-		// std::cout << std::setw(10) << _truncateString(_contacts[i].getFirstName(), 10) << "|";
 		std::cout << std::setw(10) << _truncateString(_contacts[i].getFirstName(), 10) << "|";
 		std::cout << std::setw(10) << _truncateString(_contacts[i].getLastName(), 10) << "|";
 		std::cout << std::setw(10) << _truncateString(_contacts[i].getNickname(), 10) << "|" << std::endl;
