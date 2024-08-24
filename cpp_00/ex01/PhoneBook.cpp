@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:48:03 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/23 14:58:53 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/24 18:42:32 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,6 @@ void PhoneBook::searchContact(void) {
 /*                          PRIVATE                                 */
 /********************************************************************/
 
-int PhoneBook::_inputSearchIndex(void) {
-
-	return 0;	
-}
-
 // is designed to reset the state of the standard input stream. 
 // to clear any errors and discard any unwanted input that might be left in the input buffer.
 void PhoneBook::_resetInputStream(){
@@ -131,6 +126,37 @@ std::string PhoneBook::_inputPhoneNumber(void){
 			std::cout << "Please, enter a valid phone number (only digits): ";
 		else
 			return input;
+	}
+}
+
+int PhoneBook::_inputSearchIndex(void) {
+	std::string input = "";
+	int index = 0;
+	while(true) {
+		std::cout << "Please enter the index of the contact you want to see: ";
+		if (!std::getline(std::cin, input)) {
+			if (std::cin.eof())
+				std::cout << std::endl << "Input ended. ";
+			else
+				std::cerr << std::endl << "Error reading input.";
+			std::cout << "Returning to main menu." << std::endl;
+			_resetInputStream();
+			return -1;
+		}
+		if (input.empty()) { // if (input == "")
+			std::cout << "Index can not be empty." << std::endl;
+			continue;
+		}
+		if (input.find_first_not_of("0123456789") != std::string::npos) {
+			std::cout << "Index can only contain digits." << std::endl;
+			continue;
+		}
+		index = std::atoi(input.c_str()); // C++98, the most common way to convert a std::string to an integer is to use the C-style
+		if (index < 1 || index > _saved_contacts_size) {
+			std::cout << "Index out of range. Please, enter a valid index." << std::endl;
+			continue;
+		}
+		return index - 1;
 	}
 }
 
