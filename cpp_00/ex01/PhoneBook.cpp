@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 14:48:03 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/24 18:42:32 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/24 19:01:44 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ void PhoneBook::searchContact(void) {
 	}
 	_showContacts();
 	index = _inputSearchIndex();
-	std::cout << "index= " << index << std::endl; //tracing
+	if (index == -1)
+		return;
+	_showContactData(index);
+	// std::cout << "index= " << index << std::endl; //tracing
 }
 
 /********************************************************************/
@@ -129,6 +132,7 @@ std::string PhoneBook::_inputPhoneNumber(void){
 	}
 }
 
+/* selection index input */
 int PhoneBook::_inputSearchIndex(void) {
 	std::string input = "";
 	int index = 0;
@@ -184,5 +188,16 @@ void PhoneBook::_showContacts(void) {
 		std::cout << std::setw(10) << _truncateString(_contacts[i].getLastName(), 10) << "|";
 		std::cout << std::setw(10) << _truncateString(_contacts[i].getNickname(), 10) << "|" << std::endl;
 	}
+	std::cout << std::endl;
+}
+
+/* prints out on the screen hte contact data of the person, selected by index */
+void PhoneBook::_showContactData(int index) {
+	std::cout <<  std::endl;
+	std::cout << "First name:     " << _contacts[index].getFirstName() << std::endl;
+	std::cout << "Last name:      " << _contacts[index].getLastName() << std::endl;
+	std::cout << "Nickname:       " << _contacts[index].getNickname() << std::endl;
+	std::cout << "Phone number:   " << _contacts[index].getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret: " << _contacts[index].getSecret() << std::endl;
 	std::cout << std::endl;
 }
