@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:16:08 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/23 11:41:16 by oruban           ###   ########.fr       */
+/*   Updated: 2024/08/25 18:03:48 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int main(void)
 			book.addContact();
 		if (input == "SEARCH" || input == "2")
 			book.searchContact();
-		else
-			std::cout << "Invalid command. Please, try again." << std::endl;
+		// else
+		// 	std::cout << "Invalid command. Please, try again." << std::endl;
 	}
 	
 }
