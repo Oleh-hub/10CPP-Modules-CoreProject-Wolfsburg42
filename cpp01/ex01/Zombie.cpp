@@ -1,10 +1,12 @@
 #include "Zombie.hpp"
 
 /************************************************/
-/*					CONSTRUCTOR					*/
+/*					CONSTRUCTORS					*/
 /************************************************/
-Zombie::Zombie(std::string public_name) : name(public_name) {
+Zombie::Zombie() {
 }
+// Zombie::Zombie(std::string public_name) : name(public_name) {
+// }
 /************************************************/
 /*					DISRUCTOR					*/
 /************************************************/
@@ -18,3 +20,7 @@ void Zombie::announce(void) {
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
+// sets the name of the zombie in case of default constructor usage.
+void Zombie::setName(std::string public_name) {
+	name = public_name;
+}
