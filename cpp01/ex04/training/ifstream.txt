@@ -1,0 +1,11 @@
+ifstream
+Definition: ifstream stands for input file stream and is a class derived from istream that provides facilities for reading data from files.
+Usage: It is used to read data from files.
+Header: Defined in the <fstream> header.
+
+Example:
+look fstream.cpp
+
+Explanation
+istream: Used for general input operations, such as reading from the console.
+ifstream: Specialized for reading from files, providing additional functionality to handle file-specific operations.

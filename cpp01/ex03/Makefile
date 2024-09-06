@@ -1,7 +1,7 @@
 NAME	= violence
 CC		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
-CFLAGS += -Wpedantic -fsanitize=address
+# CFLAGS += -Wpedantic -fsanitize=address
 SRCS 	= $(shell find . -not -path './training/*' -name '*.cpp')
 OBJS 	= $(SRCS:.cpp=.o)
 
@@ -23,3 +23,6 @@ re: fclean all
 
 prn:
 	@echo $(CFLAGS)
+
+val:
+	valgrind --leak-check=full ./$(NAME)
