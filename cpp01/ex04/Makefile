@@ -1,4 +1,4 @@
-NAME	= sed4Losers
+NAME	= sedForLosers
 CC		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 CFLAGS += -Wpedantic -fsanitize=address
@@ -11,7 +11,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp *.hpp
-	$(CC) $(C_FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS) *.o
