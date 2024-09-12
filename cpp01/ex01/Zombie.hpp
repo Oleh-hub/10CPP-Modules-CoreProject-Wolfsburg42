@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:29:57 by oruban            #+#    #+#             */
-/*   Updated: 2024/08/30 10:54:38 by oruban           ###   ########.fr       */
+/*   Updated: 2024/09/12 17:08:25 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <iostream>
 # include <string>
 
-# define N 5			// Number of zombies in the zombie horde
-# define NAME "Zombie" // Name of the zombies in the zombie horde
+# define NUM 5			// Number of zombies in the zombie horde
+# define NAME "Vasia" // Name of the zombies in the zombie horde
 
 class Zombie {
 private:
@@ -31,6 +31,6 @@ public:
 	void setName(std::string public__name);
 };
 
-Zombie *zombieHorde( int n, std::string public_name );
+Zombie *zombieHorde( int N, std::string public_name );
 
 #endif // Zombie_HPP
