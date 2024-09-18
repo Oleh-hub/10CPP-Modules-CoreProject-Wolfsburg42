@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 20:35:55 by oruban            #+#    #+#             */
-/*   Updated: 2024/09/18 11:21:38 by oruban           ###   ########.fr       */
+/*   Updated: 2024/09/18 18:21:45 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed Point Number.
 that returns the raw value of the fixed-point value. */
  int Fixed::getRawBits(void) const
  {
-	std::cout << "getRawBits member function called " << this << std::endl;
+	std::cout << "getRawBits member function called " << std::endl; //<< this << std::endl;
 	return number;
  }
 
@@ -28,14 +28,14 @@ that returns the raw value of the fixed-point value. */
 that sets the raw value of the fixed-point number. */
 void Fixed::setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called " << this << std::endl; // is not nessesary line accoring to the subject - "Copy assignment operator called"
+	std::cout << "setRawBits member function called " << std::endl; //<< this << std::endl; // is not nessesary line accoring to the subject - "Copy assignment operator called"
 	number = raw;	
 }
 
 // A copy assignment operator overload.
 Fixed &Fixed::operator=(const Fixed &other)
 {
-	std::cout << "Copy assignment operator called " << this << std::endl;
+	std::cout << "Copy assignment operator called " << std::endl; // << this << std::endl;
 	if(this == &other)
 		return *this;
 	this->number = other.getRawBits();
@@ -47,17 +47,17 @@ Fixed &Fixed::operator=(const Fixed &other)
  // A default constructor that initializes the fixed-point number value to 0
 Fixed::Fixed() : number (0)
 {
-	std::cout << "Default constructor called " << this << std::endl;
+	std::cout << "Default constructor called " << std::endl; // << this << std::endl;
 }
 
 // A copy constructor.
 Fixed::Fixed(const Fixed &other)
 {
-	std::cout << "Copy constructor called " << this << std::endl;
+	std::cout << "Copy constructor called " << std::endl; // << this << std::endl;
 	number = other.getRawBits();
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called " << this << std::endl;
+	std::cout << "Destructor called " << std::endl; // << this << std::endl;
 }
