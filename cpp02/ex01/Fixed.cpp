@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 20:35:55 by oruban            #+#    #+#             */
-/*   Updated: 2024/09/19 16:07:19 by oruban           ###   ########.fr       */
+/*   Updated: 2024/09/22 19:36:54 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ Fixed Point Number.
 that returns the raw value of the fixed-point value. */
  int Fixed::getRawBits(void) const
  {
-	std::cout << "getRawBits member function called " << std::endl; //<< this << std::endl;
+	// std::cout << "getRawBits member function called " << this << std::endl;
+	// std::cout << "getRawBits member function called " << std::endl;
 	return number;
  }
 
@@ -28,6 +29,7 @@ that returns the raw value of the fixed-point value. */
 that sets the raw value of the fixed-point number. */
 void Fixed::setRawBits( int const raw )
 {
+	// std::cout << "setRawBits member function called " << this << std::endl;
 	std::cout << "setRawBits member function called " << std::endl; //<< this << std::endl; // is not nessesary line accoring to the subject - "Copy assignment operator called"
 	number = raw;	
 }
@@ -41,8 +43,6 @@ Fixed &Fixed::operator=(const Fixed &other)
 	this->number = other.getRawBits();
 	return *this;
 }
-
-
  
  // A default constructor that initializes the fixed-point number value to 0
 Fixed::Fixed() : number (0)
@@ -50,17 +50,27 @@ Fixed::Fixed() : number (0)
 	std::cout << "Default constructor called " << std::endl; // << this << std::endl;
 }
 
-// A copy constructor.
+// A copy constructor, correctd in compare with ex00
 Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "Copy constructor called " << std::endl; // << this << std::endl;
-	number = other.getRawBits();
+	// number = other.number;
+	*this = other;
 }
 
 // constructor that takes a constant integer as a parameter and converts it to the fixed-point value.
 Fixed::Fixed(const int number) : number (number << fractional_bits)
 {
 	std::cout << "Int constructor called " << std::endl; // << this << std::endl;
+}
+
+//******************!!!!!!!!!!!!!!!!!!!!!!! */
+// A constructor that takes a constant floating-point number as a parameter. It converts it to the corresponding fixed-point value. The fractional bits value is initialized to 8 
+Fixed::Fixed(const float number)
+// Fixed::Fixed(const float number) : number (static_cast<int> (roundf(number * (1 << fractional_bits))))
+{
+	std::cout << "Float constructor called " << std::endl;
+	this->number = static_cast<int> (roundf(number * (1 << fractional_bits)));
 }
 
 Fixed::~Fixed()
@@ -74,8 +84,15 @@ int Fixed::toInt( void ) const
 	return number >> fractional_bits;
 }
 
- // An overload of the insertion («) operator that inserts a floating-point representation of the fixed-point number into the output stream object passed as parameter.
+//A member function that converts the fixed-point value to a floating-point value.
+float Fixed::toFloat( void ) const 
+{
+	return static_cast<float>(number) / (1 << fractional_bits);
+}
+
+// An overload of the insertion («) operator that inserts a floating-point representation of the fixed-point number into the output stream object passed as parameter.
 std::ostream &operator<<(std::ostream &out, const Fixed &other)
 {
+	out << static_cast<float> (other.toFloat());
 	return out;
 }
