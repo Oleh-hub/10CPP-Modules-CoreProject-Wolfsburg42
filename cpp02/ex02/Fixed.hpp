@@ -26,28 +26,30 @@ class Fixed
 		int toInt( void ) const;	// A member function that converts the fixed-point value to an integer value.
 		float toFloat( void ) const; //A member function that converts the fixed-point value to a floating-point value.
 
-		//=====================ex02=====================
-		bool operator>(const Fixed &other);
-		bool operator<(const Fixed &other);
-		bool operator>=(const Fixed &other);
-		bool operator<=(const Fixed &other);
-		bool operator==(const Fixed &other);
-		bool operator!=(const Fixed &other);
-
-		Fixed &operator+(const Fixed &other);
-		Fixed &operator-(const Fixed &other);
-		Fixed &operator*(const Fixed &other);
-		Fixed &operator/(const Fixed &other);
-
+		//=====================ex02==================
+		// comparison operators
+		bool operator>(const Fixed &other) const;
+		bool operator<(const Fixed &other) const;
+		bool operator>=(const Fixed &other) const;
+		bool operator<=(const Fixed &other) const;
+		bool operator==(const Fixed &other) const;
+		bool operator!=(const Fixed &other) const;
+		// Arithmetic operators
+		Fixed operator+(const Fixed &other);
+		Fixed operator-(const Fixed &other);
+		Fixed operator*(const Fixed &other);
+		Fixed operator/(const Fixed &other);
+		// Increment/decrement operators
+		// ----------------------------------------
+		/* The 4 increment/decrement (pre-increment and post-increment, pre-decrement and post-decrement) operators, that will increase or decrease the fixed-point value from the smallest representable ε such as 1 + ε > 1 */
 		/* В контексте чисел с фиксированной запятой, инкремент и декремент действительно увеличивают или уменьшают внутреннее представление числа на 1. That is = 0.00390625  */
-		
 		Fixed &operator++(void); // prefix increment
 		Fixed operator++(int); // postfix increment
 		Fixed &operator--(void); // prefix decrement
 		Fixed operator--(int); // postfix decrement
-
-		
-
+		// 
+		// --------------------------------
+		// A static member function min that takes as parameters two references on fixed-point numbers, and returns a reference to the smallest one.
 };
 		std::ostream &operator<<(std::ostream &out, const Fixed &other); // An overload of the insertion («) operator that inserts a floating-point representation of the fixed-point number into the output stream object passed as parameter.
 

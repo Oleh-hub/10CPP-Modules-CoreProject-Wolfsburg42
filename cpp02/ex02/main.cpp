@@ -60,7 +60,7 @@ int main() {
 
 	// Arithmetic operators
 	Fixed c = a + b;
-	std::cout << "a + b = " << c << std::endl;
+	std::cout << "a + b = " << a << " + " << b << " = " << c << std::endl;
 	Fixed d = a - b;
 	std::cout << "a - b = " << d << std::endl;
 	Fixed e = a * b;
@@ -70,14 +70,14 @@ int main() {
 	std::cout << std::endl;
 
 	// Increment/decrement operators
-	Fixed g = ++a; // Pre-increment
-	std::cout << "++a = " << g << std::endl;
-	Fixed h = a++; // Post-increment
-	std::cout << "a++ = " << h << std::endl;
-	Fixed i = --b; // Pre-decrement
-	std::cout << "--b = " << i << std::endl;
-	Fixed j = b--; // Post-decrement
-	std::cout << "b-- = " << j << std::endl;
+	// Fixed g = ++a; // Pre-increment
+	// std::cout << "++a = " << g << std::endl;
+	// Fixed h = a++; // Post-increment
+	// std::cout << "a++ = " << h << std::endl;
+	// Fixed i = --b; // Pre-decrement
+	// std::cout << "--b = " << i << std::endl;
+	// Fixed j = b--; // Post-decrement
+	// std::cout << "b-- = " << j << std::endl;
 
 	return 0;
 }

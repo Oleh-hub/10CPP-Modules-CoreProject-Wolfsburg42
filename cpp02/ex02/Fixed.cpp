@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 20:35:55 by oruban            #+#    #+#             */
-/*   Updated: 2024/09/22 19:41:49 by oruban           ###   ########.fr       */
+/*   Updated: 2024/09/23 17:21:00 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,67 @@ std::ostream &operator<<(std::ostream &out, const Fixed &other)
 {
 	out << static_cast<float> (other.toFloat());
 	return out;
+}
+
+//=====================ex02=====================
+// comparison operators
+bool Fixed::operator>(const Fixed &other) const
+{
+	return (this->getRawBits() > other.getRawBits());
+}
+bool Fixed::operator<(const Fixed &other) const
+{
+	return (this->getRawBits() < other.getRawBits());
+}
+bool Fixed::operator>=(const Fixed &other) const
+{
+	return (this->getRawBits() >= other.getRawBits());
+}
+bool Fixed::operator<=(const Fixed &other) const
+{
+	return (this->getRawBits() <= other.getRawBits());
+}
+bool Fixed::operator==(const Fixed &other) const
+{
+	return (this->getRawBits() == other.getRawBits());
+}
+bool Fixed::operator!=(const Fixed &other) const
+{
+	return (this->getRawBits() != other.getRawBits());
+}
+// Arithmetic operators
+Fixed Fixed::operator+(const Fixed &other)
+{
+	return Fixed (this->toFloat() + other.toFloat());
+}
+Fixed Fixed::operator-(const Fixed &other)
+{
+		return Fixed (this->toFloat() - other.toFloat());
+}
+Fixed Fixed::operator*(const Fixed &other)
+{
+	return Fixed (this->toFloat() * other.toFloat());
+}
+Fixed Fixed::operator/(const Fixed &other)
+{
+	return Fixed (this->toFloat() / other.toFloat());
+}
+// Increment/decrement operators
+// ----------------------------------------
+/* В контексте чисел с фиксированной запятой, инкремент и декремендействительно увеличивают или уменьшают внутреннее представление числна 1. That is = 0.00390625  */
+Fixed &Fixed::operator++(void) // prefix increment
+{
+	return this->toInt() + 1;
+}
+Fixed Fixed::operator++(int) // postfix increment
+{
+	
+}
+Fixed &Fixed::operator--(void) // prefix decrement
+{
+	
+}
+Fixed Fixed::operator--(int) // postfix decrement
+{
+	
 }
