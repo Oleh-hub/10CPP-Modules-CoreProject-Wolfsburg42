@@ -47,9 +47,13 @@ class Fixed
 		Fixed operator++(int); // postfix increment
 		Fixed &operator--(void); // prefix decrement
 		Fixed operator--(int); // postfix decrement
-		// 
+		// Add these four public overloaded member functions to your class:
 		// --------------------------------
 		// A static member function min that takes as parameters two references on fixed-point numbers, and returns a reference to the smallest one.
+		Fixed &min(Fixed &a, Fixed &b);
+		Fixed const &min(Fixed const &a, Fixed const &b);
+		Fixed &max(Fixed &a, Fixed &b);
+		Fixed const &max(Fixed const &a, Fixed const &b);
 };
 		std::ostream &operator<<(std::ostream &out, const Fixed &other); // An overload of the insertion («) operator that inserts a floating-point representation of the fixed-point number into the output stream object passed as parameter.
 

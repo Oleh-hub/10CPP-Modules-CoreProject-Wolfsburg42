@@ -79,5 +79,10 @@ int main() {
 	// Fixed j = b--; // Post-decrement
 	// std::cout << "b-- = " << j << std::endl;
 
+	// Min and Max
+	Fixed k_min = k_min.min(a, b);
+	std::cout << "min(" << a << ", " << b << ") = " << k_min << std::endl;
+	Fixed k_max = k_max.max(a, b);
+	std::cout << "max(" << a << ", " << b << ") = " << k_max << std::endl;
 	return 0;
 }

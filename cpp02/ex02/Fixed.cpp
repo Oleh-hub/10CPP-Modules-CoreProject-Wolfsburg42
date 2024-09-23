@@ -6,7 +6,7 @@
 /*   By: oruban <oruban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 20:35:55 by oruban            #+#    #+#             */
-/*   Updated: 2024/09/23 17:21:00 by oruban           ###   ########.fr       */
+/*   Updated: 2024/09/23 20:33:55 by oruban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,9 +143,9 @@ Fixed Fixed::operator/(const Fixed &other)
 // Increment/decrement operators
 // ----------------------------------------
 /* В контексте чисел с фиксированной запятой, инкремент и декремендействительно увеличивают или уменьшают внутреннее представление числна 1. That is = 0.00390625  */
-Fixed &Fixed::operator++(void) // prefix increment
+/* Fixed &Fixed::operator++(void) // prefix increment
 {
-	return this->toInt() + 1;
+
 }
 Fixed Fixed::operator++(int) // postfix increment
 {
@@ -158,4 +158,23 @@ Fixed &Fixed::operator--(void) // prefix decrement
 Fixed Fixed::operator--(int) // postfix decrement
 {
 	
+} */
+// Add these four public overloaded member functions to your class:
+// --------------------------------
+// A static member function min that takes as parameters two references on fixed-point numbers, and returns reference to the smallest one.
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	return (a < b) ? a : b;
+}
+Fixed const &Fixed::min(Fixed const &a, Fixed const &b)
+{
+	return (a < b) ? a : b;
+}
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	return (a > b) ? a : b;
+}
+Fixed const &Fixed::max(Fixed const &a, Fixed const &b)
+{
+	return (a > b) ? a : b;
 }
