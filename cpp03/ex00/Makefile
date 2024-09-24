@@ -1,7 +1,4 @@
-#  Convertro to float. IEEE-754 Floating Point Converter
-#  https://www.h-schmidt.net/FloatConverter/IEEE754.html
-
-NAME	= fixed
+NAME	= claptrap
 CC		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 CFLAGS += -Wpedantic -fsanitize=address
