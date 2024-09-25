@@ -1,4 +1,4 @@
-#  Convertro to float. IEEE-754 Floating Point Converter
+#  Convertor to float. IEEE-754 Floating Point Converter
 #  https://www.h-schmidt.net/FloatConverter/IEEE754.html
 
 NAME	= fixed
