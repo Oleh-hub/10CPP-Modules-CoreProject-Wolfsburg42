@@ -12,13 +12,13 @@
 
 int main() 
 {
-	ClapTrap default_name;
+	ClapTrap cla4p_tp;
 	ClapTrap bob("Bob");
 	ClapTrap dave("Dave");
 
 	{
 		for (int i = 0; i < 11; i++) {
-			default_name.attack("Barrel");
+			cla4p_tp.attack("Barrel");
 		}
 	}
 	{
