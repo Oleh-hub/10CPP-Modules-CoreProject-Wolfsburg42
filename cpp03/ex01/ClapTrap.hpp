@@ -16,8 +16,9 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap &other); // copy constructor
 		~ClapTrap();
+		ClapTrap(const ClapTrap &other); // copy constructor
+		std::string getName(); // _name getter---------------1118 roi
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

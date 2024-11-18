@@ -15,14 +15,8 @@ int main()
 	ClapTrap cla4p_tp;
 	ClapTrap bob("Bob");
 	ClapTrap dave("Dave");
-	ClapTrap olh(bob);	// copy constructor used 1811
 
-
-	std::cout << "Имя cla4p_tp: " << cla4p_tp.getName() << std::endl;
-	std::cout << "Имя bob: " << bob.getName() << std::endl;
-	std::cout << "Имя dave: " << dave.getName() << std::endl;
-	std::cout << "Имя olh: " << olh.getName() << std::endl;
-/* 	{
+	{
 		for (int i = 0; i < 11; i++) {
 			cla4p_tp.attack("Barrel");
 		}
@@ -38,5 +32,5 @@ int main()
 			bob.takeDamage(10);
 		}
 	}
-	std::cout << std::endl; */
+	std::cout << std::endl;
 }

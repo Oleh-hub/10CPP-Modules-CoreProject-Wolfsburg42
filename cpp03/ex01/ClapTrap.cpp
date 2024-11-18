@@ -16,7 +16,7 @@ ClapTrap::~ClapTrap()
 // Copy constructor and assignment operator
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-	_name = other._name;
+	_name = other._name; // is it necessary? what is the sense to get a var with the name already existing!? roi 181124
 	_hitPoints = other._hitPoints;
 	_energyPoints = other._energyPoints;
 	_attackDamage = other._attackDamage;
@@ -78,6 +78,10 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 }
 
+std::string ClapTrap::getName()
+{
+	return _name;
+}
 /* unsigned int ClapTrap::getHitPoints()
 {
 	return _hitPoints;
