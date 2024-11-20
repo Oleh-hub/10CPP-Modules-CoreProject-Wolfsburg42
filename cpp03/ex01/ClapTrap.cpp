@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 # define HITPOINTS 100
 # define ENERGYPOINTS 50
-# define ATTACKDAMAGE 20
+# define ATTACKDEMAGE 20
 // fancy colors:
 # define RESET 		"\033[0;39m"
 # define GRAY 		"\033[0;90m"
@@ -14,14 +14,15 @@
 # define WHITE 		"\033[0;97m"
 
 // The constructors and destructor must also display a message, so your peer-evaluators can easily see they have been called.
-ClapTrap::ClapTrap() : _name("Vasia_default"), _hitPoints(HITPOINTS), _energyPoints(ENERGYPOINTS), _attackDamage(ATTACKDAMAGE)
+ClapTrap::ClapTrap() : _name("Vasia_default"), _hitPoints(HITPOINTS), _energyPoints(ENERGYPOINTS), _attackDamage(ATTACKDEMAGE)
 {
 	std::cout << GRAY "ClapTrap " RED << _name << GRAY " is born! (Default constructor for " << this << " is called) " RESET << std::endl;
 }
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(HITPOINTS), _energyPoints(ENERGYPOINTS), _attackDamage(ATTACKDEMAGE)
 {
-	std::cout << GREEN "ClapTrap " RED  << _name << GREEN " is born! (Constructor for " << this << " is called) " RESET << std::endl;
+	std::cout << GRAY "ClapTrap " RED  << _name << GRAY " is born! (Constructor for " << this << " is called) " RESET << std::endl;
 }
+//Distuctor
 ClapTrap::~ClapTrap()
 {
 	std::cout << YELLOW "ClapTrap " RED  << _name << YELLOW " is dead! (Destructor for " << this << " is called) " RESET << std::endl;
@@ -33,7 +34,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	_hitPoints = other._hitPoints;
 	_energyPoints = other._energyPoints;
 	_attackDamage = other._attackDamage;
-	std::cout << BLUE "Copy constructor for " RED << _name << BLUE " " << this << " is called " RESET << std::endl;
+	std::cout << GREEN "Copy constructor for " RED << _name << GREEN " " << this << " is called " RESET << std::endl;
 }
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
@@ -53,18 +54,18 @@ void ClapTrap::attack(const std::string& target)
 	// ClapTrap <name> attacks <target>, causing <damage> points of damage!
 	if (_energyPoints > 0 && _hitPoints > 0)
 	{
-		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+		std::cout << BLUE "ClapTrap " RED << _name << BLUE " attacks " << target << ", causing " << _attackDamage << " points of damage!" RESET << std::endl;
 		_energyPoints--;
 	}
 	else
-		std::cout << "ClapTrap " << _name << " is out of energy or dead!" << std::endl;
+		std::cout << BLUE "ClapTrap " RED << _name << BLUE " is out of energy or dead!" RESET << std::endl;
 }
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hitPoints > 0)
 	{
 		_hitPoints -= amount;
-		std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage!" << std::endl;
+		std::cout << MAGENTA "ClapTrap " RED << _name << MAGENTA " takes " << amount << " points of damage!" RESET << std::endl;
 	}
 	else
 		std::cout << "ClapTrap " << _name << " is already dead!" << std::endl;

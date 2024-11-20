@@ -23,22 +23,24 @@ int main()
 	std::cout << "Имя dave: " << dave.getName() << std::endl;
 	std::cout << "Имя olh: " << olh.getName() << std::endl << std::endl;
 	{
-		for (int i = 0; i < 11; i++) {
+		for (int i = 0; i < 10; i++)
 			cla4p_tp.attack("Barrel");
+		for (int i = 0; i < 3; i++)
+		{
+			cla4p_tp.attack("Bob");
+			bob.takeDamage(cla4p_tp.getAttackDamage());
 		}
 	}
 	{
 		std::cout << bob.getName() << " has " << bob.getHitPoints() << " points!" << std::endl;
 		std::cout << std::endl;
-		for (int i = 0; i < 11; i++) {
+		for (int i = 0; i < 10; i++)
 			bob.beRepaired(1);
-		}
 		std::cout << bob.getName() << " has " << bob.getHitPoints() << " points!" << std::endl;
 		bob.attack("the air");
 		std::cout << std::endl;
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 3; i++)
 			bob.takeDamage(10);
-		}
 	}
 	std::cout << std::endl;
 }
