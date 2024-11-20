@@ -75,7 +75,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	unsigned int repare_amount = 0;
 	if (_hitPoints <= 0)
 	{
-		std::cout << "ClapTrap " << _name << " is already dead!" << std::endl;
+		std::cout << CYAN "ClapTrap " RED  << _name << CYAN " is already dead!" RESET << std::endl;
 		return ;
 	}
 	if(_hitPoints < HITPOINTS)
@@ -88,7 +88,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 		}
 		else
 			repare_amount = amount;
-		std::cout << "ClapTrap " << _name << " is repaired by " << repare_amount << " points!" << std::endl;
+		std::cout << CYAN "ClapTrap " RED << _name << CYAN " is repaired by " << repare_amount << " points!" RESET << std::endl;
 	}
 }
 // Getters
