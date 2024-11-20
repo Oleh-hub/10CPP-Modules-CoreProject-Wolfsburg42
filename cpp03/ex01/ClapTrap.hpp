@@ -1,14 +1,12 @@
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
-
-# define HITPOINTS 10
 # include <iostream>
 # include <string>
 
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string _name;
 		unsigned int _hitPoints;
 		unsigned int _energyPoints;
@@ -17,12 +15,18 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap(std::string name);
 		~ClapTrap();
-		ClapTrap(const ClapTrap &other); // copy constructor
-		std::string getName(); // _name getter---------------1118 roi
+		ClapTrap(const ClapTrap &other);// copy constructor
+		ClapTrap &operator=(const ClapTrap &other); // assignment operator
+		
+		// getters -----------1118 roi
+		std::string getName();
+		unsigned int getHitPoints();
+		unsigned int getEnergyPoints();
+		unsigned int getAttackDamage();
+		
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		// unsigned int getHitPoints();
-		ClapTrap &operator=(const ClapTrap &other); // assignment operator
 };
 #endif // CLAPTRAP_HPP
