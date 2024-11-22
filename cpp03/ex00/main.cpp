@@ -15,6 +15,7 @@ int main()
 	ClapTrap default_name;
 	ClapTrap bob("Bob");
 	ClapTrap dave("Dave");
+	ClapTrap tom(dave);
 
 	{
 		for (int i = 0; i < 11; i++) {

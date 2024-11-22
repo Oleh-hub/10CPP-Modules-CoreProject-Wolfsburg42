@@ -1,7 +1,6 @@
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-# define HITPOINTS 10
 # include <iostream>
 # include <string>
 

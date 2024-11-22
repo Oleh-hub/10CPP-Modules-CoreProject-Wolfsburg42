@@ -1,26 +1,37 @@
 #include "ClapTrap.hpp"
 
+# define HITPOINTS 100
+# define ENERGYPOINTS 50
+# define ATTACKDEMAGE 20
+// fancy colors:
+# define RESET 		"\033[0;39m"
+# define GRAY 		"\033[0;90m"
+# define RED 		"\033[0;91m"
+# define GREEN 		"\033[0;92m"
+# define YELLOW 	"\033[0;93m"
+# define BLUE 		"\033[0;94m"
+# define MAGENTA 	"\033[0;95m"
+# define CYAN 		"\033[0;96m"
+# define WHITE 		"\033[0;97m"
+
 // The constructors and destructor must also display a message, so your peer-evaluators can easily see they have been called.
-ClapTrap::ClapTrap() : _name("Vasia_default"), _hitPoints(HITPOINTS), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap() : _name("Vasia_default"), _hitPoints(HITPOINTS), _energyPoints(ENERGYPOINTS), _attackDamage(ATTACKDEMAGE)
 {
-	std::cout << "ClapTrap " << _name << " is born! (Default constructor for " << this << " is called) " << std::endl;
+	std::cout << GRAY "ClapTrap " RED << _name << GRAY " is born! (Default constructor for " << this << " is called) " RESET << std::endl;
 }
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(HITPOINTS), _energyPoints(ENERGYPOINTS), _attackDamage(ATTACKDEMAGE)
 {
-	std::cout << "ClapTrap " << _name << " is born! (Constructor for " << this << " is called) " << std::endl;
+	std::cout << GRAY "ClapTrap " RED  << _name << GRAY " is born! (Constructor for " << this << " is called) " RESET << std::endl;
 }
+//Distuctor
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << _name << " is dead! (Destructor for " << this << " is called) " << std::endl;
+	std::cout << YELLOW "ClapTrap " RED  << _name << YELLOW " is dead! (Destructor for " << this << " is called) " RESET << std::endl;
 }
 // Copy constructor and assignment operator
-ClapTrap::ClapTrap(const ClapTrap &other)
+ClapTrap::ClapTrap(const ClapTrap &other) : _name(other._name), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
 {
-	_name = other._name;
-	_hitPoints = other._hitPoints;
-	_energyPoints = other._energyPoints;
-	_attackDamage = other._attackDamage;
-	std::cout << "Copy constructor for " << _name << " " << this << " is called " << std::endl;
+	std::cout << GREEN "Copy constructor for " RED << _name << GREEN " " << this << " is called " RESET << std::endl;
 }
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {

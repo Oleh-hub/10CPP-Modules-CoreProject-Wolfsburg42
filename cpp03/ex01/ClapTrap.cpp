@@ -92,19 +92,19 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 }
 // Getters
-std::string ClapTrap::getName()
+std::string const &ClapTrap::getName() const
 {
 	return _name;
 }
-unsigned int ClapTrap::getHitPoints()
+unsigned int ClapTrap::getHitPoints() const
 {
 	return _hitPoints;
 }
-unsigned int ClapTrap::getEnergyPoints()
+unsigned int ClapTrap::getEnergyPoints() const
 {
 	return _energyPoints;
 }
-unsigned int ClapTrap::getAttackDamage()
+unsigned int ClapTrap::getAttackDamage() const
 {
 	return _attackDamage;
 }

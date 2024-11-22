@@ -19,10 +19,10 @@ class ClapTrap
 		ClapTrap &operator=(const ClapTrap &other); // assignment operator
 		
 		// getters -----------1118 roi
-		std::string getName();
-		unsigned int getHitPoints();
-		unsigned int getEnergyPoints();
-		unsigned int getAttackDamage();
+		std::string const &getName() const;
+		unsigned int getHitPoints() const;
+		unsigned int getEnergyPoints() const;
+		unsigned int getAttackDamage() const;
 		
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
