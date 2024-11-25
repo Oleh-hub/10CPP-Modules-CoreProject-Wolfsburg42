@@ -2,7 +2,9 @@
 # define CLAPTRAP_HPP
 # include <iostream>
 # include <string>
-
+# define HITPOINTS 100
+# define ENERGYPOINTS 50
+# define ATTACKDEMAGE 20
 
 class ClapTrap
 {
@@ -14,8 +16,8 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
-		~ClapTrap();
 		ClapTrap(const ClapTrap &other);// copy constructor
+		~ClapTrap();
 		ClapTrap &operator=(const ClapTrap &other); // assignment operator
 		
 		// getters -----------1118 roi

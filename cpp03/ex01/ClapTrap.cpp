@@ -1,7 +1,4 @@
 #include "ClapTrap.hpp"
-# define HITPOINTS 100
-# define ENERGYPOINTS 50
-# define ATTACKDEMAGE 20
 // fancy colors:
 # define RESET 		"\033[0;39m"
 # define GRAY 		"\033[0;90m"
@@ -22,11 +19,6 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(HITPOINTS), _ener
 {
 	std::cout << GRAY "ClapTrap " RED  << _name << GRAY " is born! (Constructor for " << this << " is called) " RESET << std::endl;
 }
-//Distuctor
-ClapTrap::~ClapTrap()
-{
-	std::cout << YELLOW "ClapTrap " RED  << _name << YELLOW " is dead! (Destructor for " << this << " is called) " RESET << std::endl;
-}
 // Copy constructor and assignment operator
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
@@ -35,6 +27,11 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	_energyPoints = other._energyPoints;
 	_attackDamage = other._attackDamage;
 	std::cout << GREEN "Copy constructor for " RED << _name << GREEN " " << this << " is called " RESET << std::endl;
+}
+//Distuctor
+ClapTrap::~ClapTrap()
+{
+	std::cout << YELLOW "ClapTrap " RED  << _name << YELLOW " is dead! (Destructor for " << this << " is called) " RESET << std::endl;
 }
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
