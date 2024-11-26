@@ -10,9 +10,14 @@
 # define CYAN 		"\033[0;96m"
 # define WHITE 		"\033[0;97m"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : 
 {
-	_name = "ScaVsia_default";
+	_name = "ScaVasia_default";
 	std::cout << GRAY "ScavTrap " RED << _name << GRAY " is born! (Default constructor for " << this << " is called) " RESET << std::endl;
+}
+
+ScavTrap::~ScavTrap()
+{
+	std::cout << YELLOW "ScavTrap " RED  << _name << YELLOW " is dead! (Destructor for " << this << " is called) " RESET << std::endl;
 }
 

@@ -8,7 +8,7 @@ class ScavTrap : public ClapTrap
 		ScavTrap();	// default constructor
 		// ScavTrap(std::string name);
 		// ScavTrap(const ClapTrap &other);// copy constructor
-		// ~ScavTrap();
+		~ScavTrap();
 		// ScavTrap &operator=(const ScavTrap &other); // assignment operator
 };
 
