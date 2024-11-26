@@ -45,7 +45,7 @@ int main()
 		std::cout << "zopa may cause " << zopa.getAttackDamage() << " attack demage." << std::endl;
 		// std::cout << zopa._name << std::endl;
 		ScavTrap defined_name("defined_name");
-		std::cout << "The name of the variable cpied_cnstrtr: '" << defined_name.getName() << "'" << std::endl;
+		std::cout << "The name of the variable defined_name: '" << defined_name.getName() << "'" << std::endl;
 		ScavTrap cpied_cnstrtr(defined_name);
 		std::cout << "The name of the variable cpied_cnstrtr: '" << cpied_cnstrtr.getName() << "'" << std::endl;
 		zopa.attack("defined_name");
