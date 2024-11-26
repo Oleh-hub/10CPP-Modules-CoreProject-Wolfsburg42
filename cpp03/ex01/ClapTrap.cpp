@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	_hitPoints = other._hitPoints;
 	_energyPoints = other._energyPoints;
 	_attackDamage = other._attackDamage;
-	std::cout << GREEN "Copy constructor for " RED << _name << GREEN " " << this << " is called " RESET << std::endl;
+	std::cout << GREEN "Copy constructor for ClapTrap " RED << _name << GREEN " " << this << " is called " RESET << std::endl;
 }
 //Distuctor
 ClapTrap::~ClapTrap()

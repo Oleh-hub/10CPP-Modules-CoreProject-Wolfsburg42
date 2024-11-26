@@ -1,14 +1,5 @@
 
 #include "ClapTrap.hpp"
-
-/* int main()
-{
-	// ClapTrap <name> attacks <target>, causing <damage> points of damage!
-	ClapTrap a;
-	ClapTrap b("Vasya");
-	// ClapTrap b = a;
-} */
-
 #include "ScavTrap.hpp"
 
 int main() 
@@ -46,14 +37,21 @@ int main()
 		std::cout << std::endl;
 		for (int i = 0; i < 3; i++)
 			bob.takeDamage(10);
-//=====================ScvaTrap zone=======================
+		std::cout << "//=====================ScvaTrap zone====================" << std::endl;
 		ScavTrap zopa;
 		std::cout << "zopa has name '" << zopa.getName() << "'." << std::endl;
 		std::cout << "zopa has " << zopa.getHitPoints() << " hit points." << std::endl;
 		std::cout << "zopa has " << zopa.getEnergyPoints() << " energy points." << std::endl;
 		std::cout << "zopa may cause " << zopa.getAttackDamage() << " attack demage." << std::endl;
 		// std::cout << zopa._name << std::endl;
-
+		zopa.attack("SMTHNG");
+		ScavTrap defined_name("defined_name");
+		std::cout << "The name of the variable cpied_cnstrtr: '" << defined_name.getName() << "'" << std::endl;
+		ScavTrap cpied_cnstrtr(defined_name);
+		std::cout << "The name of the variable cpied_cnstrtr: '" << cpied_cnstrtr.getName() << "'" << std::endl;
+		defined_name.takeDamage(15);
+		defined_name.beRepaired(15);
+		defined_name.guardGate();
 	}
 	std::cout << std::endl;
 }
