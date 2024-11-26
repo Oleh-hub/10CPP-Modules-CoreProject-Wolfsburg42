@@ -44,13 +44,13 @@ int main()
 		std::cout << "zopa has " << zopa.getEnergyPoints() << " energy points." << std::endl;
 		std::cout << "zopa may cause " << zopa.getAttackDamage() << " attack demage." << std::endl;
 		// std::cout << zopa._name << std::endl;
-		zopa.attack("SMTHNG");
 		ScavTrap defined_name("defined_name");
 		std::cout << "The name of the variable cpied_cnstrtr: '" << defined_name.getName() << "'" << std::endl;
 		ScavTrap cpied_cnstrtr(defined_name);
 		std::cout << "The name of the variable cpied_cnstrtr: '" << cpied_cnstrtr.getName() << "'" << std::endl;
-		defined_name.takeDamage(15);
-		defined_name.beRepaired(15);
+		zopa.attack("defined_name");
+		defined_name.takeDamage(ATTACKDEMAGE);
+		defined_name.beRepaired(ATTACKDEMAGE);
 		defined_name.guardGate();
 	}
 	std::cout << std::endl;
