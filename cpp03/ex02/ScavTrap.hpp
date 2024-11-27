@@ -1,5 +1,8 @@
 #ifndef SCAVTRAP_HPP
 #include "ClapTrap.hpp"
+# define SCAVTRAP_HITPOINTS 100
+# define SCAVTRAP_ENERGYPOINTS 50
+# define SCAVTRAP_ATTACKDEMAGE 20
 
 class ScavTrap : public ClapTrap
 {

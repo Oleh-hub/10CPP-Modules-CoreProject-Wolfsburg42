@@ -11,11 +11,11 @@
 # define WHITE 		"\033[0;97m"
 
 // The constructors and destructor must also display a message, so your peer-evaluators can easily see they have been called.
-ClapTrap::ClapTrap() : _name("Vasia_default"), _hitPoints(HITPOINTS), _energyPoints(ENERGYPOINTS), _attackDamage(ATTACKDEMAGE)
+ClapTrap::ClapTrap() : _name("Vasia_default"), _hitPoints(CLAPTRAP_HITPOINTS), _energyPoints(CLAPTRAP_ENERGYPOINTS), _attackDamage(CLAPTRAP_ATTACKDEMAGE)
 {
 	std::cout << GRAY "ClapTrap " RED << _name << GRAY " is born! (Default constructor for " << this << " is called) " RESET << std::endl;
 }
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(HITPOINTS), _energyPoints(ENERGYPOINTS), _attackDamage(ATTACKDEMAGE)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(CLAPTRAP_HITPOINTS), _energyPoints(CLAPTRAP_ENERGYPOINTS), _attackDamage(CLAPTRAP_ATTACKDEMAGE)
 {
 	std::cout << GRAY "ClapTrap " RED  << _name << GRAY " is born! (Constructor for " << this << " is called) " RESET << std::endl;
 }
@@ -75,13 +75,13 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << CYAN "ClapTrap " RED  << _name << CYAN " is already dead!" RESET << std::endl;
 		return ;
 	}
-	if(_hitPoints < HITPOINTS)
+	if(_hitPoints < CLAPTRAP_HITPOINTS)
 	{
 		_hitPoints += amount;
-		if (_hitPoints > HITPOINTS)
+		if (_hitPoints > CLAPTRAP_HITPOINTS)
 		{
-			repare_amount = amount - (_hitPoints - HITPOINTS);
-			_hitPoints = HITPOINTS;
+			repare_amount = amount - (_hitPoints - CLAPTRAP_HITPOINTS);
+			_hitPoints = CLAPTRAP_HITPOINTS;
 		}
 		else
 			repare_amount = amount;

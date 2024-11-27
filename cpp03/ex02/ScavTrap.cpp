@@ -12,12 +12,18 @@
 
 ScavTrap::ScavTrap() : ClapTrap("ScaVasia_default")
 {
+	_hitPoints = 	SCAVTRAP_HITPOINTS;
+	_energyPoints = SCAVTRAP_ENERGYPOINTS;
+	_attackDamage = SCAVTRAP_ATTACKDEMAGE;
 	std::cout << GRAY "ScavTrap " RED << _name << GRAY " is born! (Default constructor for " << this << " is called) " RESET << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
 {
 	_name = name;
+	_hitPoints = 	SCAVTRAP_HITPOINTS;
+	_energyPoints = SCAVTRAP_ENERGYPOINTS;
+	_attackDamage = SCAVTRAP_ATTACKDEMAGE;
 	std::cout << GRAY "ScavTrap " RED  << _name << GRAY " is born! (Constructor for " << this << " is called) " RESET << std::endl;
 }
 // Copy constructor and assignment operator

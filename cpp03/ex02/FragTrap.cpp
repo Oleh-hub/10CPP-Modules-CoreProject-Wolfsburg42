@@ -1,6 +1,4 @@
 #include "FragTrap.hpp"
-# define FRAG_ENERGYPOINTS 100
-# define FRAG_ATTACKDEMAGE 30
 // fancy colors:
 # define RESET 		"\033[0;39m"
 # define GRAY 		"\033[0;90m"
@@ -14,6 +12,7 @@
 
 FragTrap::FragTrap() : ClapTrap("Fragasia_default")
 {
+	_hitPoints = FRAG_HITPOINTS;
 	_energyPoints = FRAG_ENERGYPOINTS;
 	_attackDamage = FRAG_ATTACKDEMAGE;
 	std::cout << GRAY "FragTrap " RED << _name << GRAY " is born! (Default constructor for " << this << " is called) " RESET << std::endl;
@@ -22,6 +21,7 @@ FragTrap::FragTrap() : ClapTrap("Fragasia_default")
 FragTrap::FragTrap(std::string name)
 {
 	_name = name;
+	_hitPoints = FRAG_HITPOINTS;
 	_energyPoints = FRAG_ENERGYPOINTS;
 	_attackDamage = FRAG_ATTACKDEMAGE;
 	std::cout << GRAY "FragTrap " RED  << _name << GRAY " is born! (Constructor for " << this << " is called) " RESET << std::endl;

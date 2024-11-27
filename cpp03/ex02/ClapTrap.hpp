@@ -2,9 +2,9 @@
 # define CLAPTRAP_HPP
 # include <iostream>
 # include <string>
-# define HITPOINTS 100
-# define ENERGYPOINTS 50
-# define ATTACKDEMAGE 20
+# define CLAPTRAP_HITPOINTS 10
+# define CLAPTRAP_ENERGYPOINTS 10
+# define CLAPTRAP_ATTACKDEMAGE 0
 
 class ClapTrap
 {

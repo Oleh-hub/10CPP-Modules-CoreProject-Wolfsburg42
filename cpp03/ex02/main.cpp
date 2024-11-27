@@ -28,7 +28,7 @@ int main()
 		std::cout << std::endl;
 		for (int i = 0; i < 10; i++)
 		{
-			if (bob.getHitPoints() < HITPOINTS)
+			if (bob.getHitPoints() < CLAPTRAP_HITPOINTS)
 				bob.beRepaired(20);
 			else
 				break;
@@ -50,8 +50,8 @@ int main()
 		ScavTrap cpied_cnstrtr(defined_name);
 		std::cout << "The name of the variable cpied_cnstrtr: '" << cpied_cnstrtr.getName() << "'" << std::endl;
 		zopa.attack("defined_name");
-		defined_name.takeDamage(ATTACKDEMAGE);
-		defined_name.beRepaired(ATTACKDEMAGE);
+		defined_name.takeDamage(SCAVTRAP_ATTACKDEMAGE);
+		defined_name.beRepaired(SCAVTRAP_ATTACKDEMAGE);
 		defined_name.guardGate();
 		defined_name = zopa;
 		std::cout << "defined_name has name '" 	<< defined_name.getName() << "'." << std::endl;
@@ -69,8 +69,8 @@ int main()
 		FragTrap fragCpdCnstrtr(fragDfndName);
 		std::cout << "The name of the variable fragCpdCnstrtr: '" << fragCpdCnstrtr.getName() << "'" << std::endl;
 		fragCpdCnstrtr.attack(fragtrap_default.getName());
-		fragtrap_default.takeDamage(ATTACKDEMAGE);
-		fragtrap_default.beRepaired(ATTACKDEMAGE);
+		fragtrap_default.takeDamage(FRAG_ATTACKDEMAGE);
+		fragtrap_default.beRepaired(FRAG_ATTACKDEMAGE);
 		std::cout << "Attention!, specific FragTrap function: " << std::endl;
 		fragtrap_default.highFivesGuys();	//specific FragTrap function
 		fragtrap_default = fragDfndName;
