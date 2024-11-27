@@ -10,6 +10,10 @@ int main()
 	ClapTrap dave("Dave");
 	ClapTrap olh(bob);
 
+	std::cout << "cla4p_tp_default has name '" 	<< cla4p_tp.getName() 		<< "'." 				<<std::endl;
+	std::cout << "cla4p_tp_default has " 		<< cla4p_tp.getHitPoints()	<< " hit points." 		<<std::endl;
+	std::cout << "cla4p_tp_default has " 		<< cla4p_tp.getEnergyPoints() << " energy points." <<std::endl;
+	std::cout << "cla4p_tp_default may cause "	<< cla4p_tp.getAttackDamage() << " attack demage." << std::endl;
 	std::cout << "Имя cla4p_tp: " << cla4p_tp.getName() << std::endl;
 	std::cout << "Имя bob: " << bob.getName() << std::endl;
 	std::cout << "Имя dave: " << dave.getName() << std::endl;
