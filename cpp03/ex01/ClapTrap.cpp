@@ -69,24 +69,13 @@ void ClapTrap::takeDamage(unsigned int amount)
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	unsigned int repare_amount = 0;
-	if (_hitPoints <= 0)
-	{
-		std::cout << CYAN "ClapTrap " RED  << _name << CYAN " is already dead!" RESET << std::endl;
-		return ;
+    if (this->_hitPoints > 0)
+    {
+        this->_hitPoints = this->_hitPoints + amount;
+		std::cout << CYAN "ClapTrap " RED << _name << CYAN " is repaired by " << amount << " points!" RESET << std::endl;
 	}
-	if(_hitPoints < CLAPTRAP_HITPOINTS)
-	{
-		_hitPoints += amount;
-		if (_hitPoints > CLAPTRAP_HITPOINTS)
-		{
-			repare_amount = amount - (_hitPoints - CLAPTRAP_HITPOINTS);
-			_hitPoints = CLAPTRAP_HITPOINTS;
-		}
-		else
-			repare_amount = amount;
-		std::cout << CYAN "ClapTrap " RED << _name << CYAN " is repaired by " << repare_amount << " points!" RESET << std::endl;
-	}
+	else
+		std::cout << "ClapTrap " RED << _name << CYAN " is already dead!" << std::endl;
 }
 // Getters
 std::string const &ClapTrap::getName() const
