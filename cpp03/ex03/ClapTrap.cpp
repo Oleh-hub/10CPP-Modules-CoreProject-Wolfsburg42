@@ -87,6 +87,8 @@ void ClapTrap::beRepaired(unsigned int amount)
 			repare_amount = amount;
 		std::cout << CYAN "ClapTrap " RED << _name << CYAN " is repaired by " << repare_amount << " points!" RESET << std::endl;
 	}
+	else
+		std::cout << "ClapTrap " RED << _name << CYAN " is already healthy enough!" << std::endl;
 }
 // Getters
 std::string const &ClapTrap::getName() const

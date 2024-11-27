@@ -4,7 +4,7 @@
 # define SCAVTRAP_ENERGYPOINTS 50
 # define SCAVTRAP_ATTACKDEMAGE 20
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap // 'virtual' here allows to use ClapTrap class in a class derived from ScavTrap
 {
 	private:
 	public:
