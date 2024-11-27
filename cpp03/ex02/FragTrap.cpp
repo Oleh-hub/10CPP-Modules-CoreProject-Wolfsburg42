@@ -38,7 +38,7 @@ FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 
 FragTrap::~FragTrap()
 {
-	std::cout << YELLOW "ScavTrap " RED  << _name << YELLOW " is dead! (Destructor for " << this << " is called) " RESET << std::endl;
+	std::cout << YELLOW "FragTrap " RED  << _name << YELLOW " is dead! (Destructor for " << this << " is called) " RESET << std::endl;
 }
 
 void FragTrap::highFivesGuys(void)

@@ -51,12 +51,12 @@ int main()
 	std::cout << "Mania has now " 		<< Mania.getHitPoints() << " hit points." << std::endl;
 	std::cout << "Mania has now " 		<< Mania.getEnergyPoints() << " energy points." << std::endl;
 	std::cout << "Mania may now cause "	<< Mania.getAttackDamage() << " attack demage." << std::endl;
-    // std::cout << GREEN << "Fragtrap hit points: " << BLUE << "100" << RESET << std::endl;
-    // std::cout << GREEN << "Scavtrap energy points: " << BLUE << "50" << RESET << std::endl;
-    // std::cout << GREEN << "Fragtrap attack damage: " << BLUE << "30" << RESET << std::endl;
-    // std::cout << GREEN << "Mania's hit points: " << BLUE << Mania.getHitPoints() << RESET << std::endl;
-    // std::cout << GREEN << "Mania's energy points: " << BLUE << Mania.getEnergyPoints() << RESET << std::endl;
-    // std::cout << GREEN << "Mania's attack damage: " << BLUE << Mania.getAttackDamage() << RESET << std::endl;
+/*     std::cout << GREEN << "Fragtrap hit points: " << BLUE << "100" << RESET << std::endl;
+    std::cout << GREEN << "Scavtrap energy points: " << BLUE << "50" << RESET << std::endl;
+    std::cout << GREEN << "Fragtrap attack damage: " << BLUE << "30" << RESET << std::endl; */
+    std::cout << GREEN << "Mania's hit points: " << BLUE << Mania.getHitPoints() << RESET << std::endl;
+    std::cout << GREEN << "Mania's energy points: " << BLUE << Mania.getEnergyPoints() << RESET << std::endl;
+    std::cout << GREEN << "Mania's attack damage: " << BLUE << Mania.getAttackDamage() << RESET << std::endl;
     Mania.attack("Pavel");
     Mania.takeDamage(15);
     Mania.beRepaired(15);
