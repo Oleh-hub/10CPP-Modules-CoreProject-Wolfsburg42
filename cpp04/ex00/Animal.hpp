@@ -19,8 +19,9 @@ class Animal
 		Animal();
 		Animal(std::string newAnimalName);
 		Animal(const Animal &other); // copy constructor
-		// Animal &operator= (const Animal &other); // assignment operator
+		Animal &operator= (const Animal &other); // assignment operator
 		~Animal();
-		// void makeSound() const;
+		std::string const &getType() const;
+		void makeSound() const;
 };
 #endif // ANIMAL_HPP
