@@ -16,5 +16,6 @@ class DiamondTrap : public ScavTrap, public FragTrap // the member  derive from 
 		~DiamondTrap();
 		void whoAmI();
 		std::string const &getName() const;
+		using ScavTrap::attack; // accesive in this very code my generally the easiest way to use one of the same name functions of the parent classes 
 };
 #endif //DIAMONDTRAP_HPP

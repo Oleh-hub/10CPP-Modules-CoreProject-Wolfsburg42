@@ -69,9 +69,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (this->_hitPoints > 0)
+	if (this->_hitPoints > 0)
     {
-        this->_hitPoints = this->_hitPoints + amount;
+		this->_hitPoints = this->_hitPoints + amount;
 		std::cout << CYAN "ClapTrap " RED << _name << CYAN " is repaired by " << amount << " points!" RESET << std::endl;
 	}
 	else
