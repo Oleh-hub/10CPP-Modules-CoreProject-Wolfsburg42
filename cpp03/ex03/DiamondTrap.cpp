@@ -25,8 +25,8 @@ DiamondTrap::DiamondTrap(std::string name) : _name(name)
 	ClapTrap::_name = "ClapTrap_" + name;
 	// this->_name = name;
 	this->_hitPoints	= FragTrap::_hitPoints;
-    this->_energyPoints = ScavTrap::_energyPoints;
-    this->_attackDamage = FragTrap::_attackDamage;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << GRAY "DiamondTrap " RED  << _name << GRAY " is born! (Constructor for " << this << " is called) " RESET << std::endl;
 }
 
