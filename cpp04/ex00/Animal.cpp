@@ -21,7 +21,7 @@ Animal &Animal::operator=(const Animal &other)
 	if (this != &other)
 	{
 		this->_type = other._type;
-		std::cout << CYAN "Operator assignment for " RED << _type << " " << CYAN << this << " is called " RESET << std::endl;
+		std::cout << CYAN "Animal operator assignment for " RED << _type << " " << CYAN << this << " is called " RESET << std::endl;
 	}
 	return *this;
 }

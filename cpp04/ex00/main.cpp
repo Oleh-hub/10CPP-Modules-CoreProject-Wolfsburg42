@@ -1,4 +1,5 @@
-# include "Animal.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
 
 int main()
 {
@@ -11,6 +12,16 @@ int main()
 	second = first;
 	std::cout << "Variable second has _type: " RED << second.getType() << RESET << std::endl;
 	second.makeSound();
+	std::cout<< std::endl << GREEN "==============Checking Dog class============" RESET << std::endl;
+
+	Dog forth;
+	Dog fifth("Tuzik");
+	Dog six(fifth);
+
+	std::cout << "Variable fifth has _type: " RED << fifth.getType() << RESET << std::endl;
+	fifth = forth;
+	std::cout << "Variable fifth has _type: " RED << fifth.getType() << RESET << std::endl;
+
 /* 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
