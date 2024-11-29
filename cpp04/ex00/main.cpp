@@ -1,5 +1,7 @@
-#include "Animal.hpp"
+// #include "Animal.hpp"
 #include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -21,8 +23,23 @@ int main()
 	std::cout << "Variable fifth has _type: " RED << fifth.getType() << RESET << std::endl;
 	fifth = forth;
 	std::cout << "Variable fifth has _type: " RED << fifth.getType() << RESET << std::endl;
+	fifth.makeSound();
+	Animal *fifth_p = &fifth;
+	fifth_p->makeSound();
+	std::cout<< std::endl << GREEN "==============Checking WrongCat class============" RESET << std::endl;
 
-/* 	const Animal* meta = new Animal();
+	WrongCat seven;
+	WrongCat eight("WrongVaska");
+	WrongCat nine(seven);
+
+	std::cout << "Variable eight has _type: " RED << eight.getType() << RESET << std::endl;
+	eight = nine;
+	std::cout << "Variable eight has _type: " RED << eight.getType() << RESET << std::endl;
+	eight.makeSound();
+	WrongAnimal *eight_p = &eight;
+	eight_p->makeSound();
+	std::cout<< std::endl << GREEN "==============Subject test:============" RESET << std::endl;
+	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
@@ -30,5 +47,8 @@ int main()
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
-	meta->makeSound(); */
+	meta->makeSound();
+	delete meta;
+	delete j;
+	delete i;
 }

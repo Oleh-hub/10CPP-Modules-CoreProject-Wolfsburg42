@@ -1,5 +1,5 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 # define RESET		"\033[0;39m"
 # define GRAY 		"\033[0;90m"
 # define RED 		"\033[0;91m"
@@ -11,19 +11,19 @@
 # define WHITE 		"\033[0;97m"
 # include <iostream>
 
-class Animal
+class WrongAnimal
 {
 	protected:
 		std::string _type;
 	public:
-		Animal();
-		Animal(std::string newAnimalName);
-		Animal(const Animal &other); // copy constructor
-		Animal &operator= (const Animal &other); // assignment operator
-		// ~Animal();
-		virtual ~Animal(); // garantees the derived class distructor being called when needed
+		WrongAnimal();
+		WrongAnimal(std::string newWrongAnimalName);
+		WrongAnimal(const WrongAnimal &other); // copy constructor
+		WrongAnimal &operator= (const WrongAnimal &other); // assignment operator
+		// ~WrongAnimal();
+		virtual ~WrongAnimal(); // garantees the derived class distructor being called when needed
 		std::string const &getType() const;
 		// void makeSound() const;
 		virtual void makeSound() const; //garantees the functionfo derived class being called when needed
 };
-#endif // ANIMAL_HPP
+#endif // WRONGANIMAL_HPP

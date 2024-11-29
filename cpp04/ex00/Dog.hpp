@@ -9,7 +9,7 @@ class Dog : public Animal
 		Dog(const Dog &other); // copy constructor
 		Dog &operator= (const Dog &other); // assignment operator
 		~Dog();
-		// void makeSound() const;
+		void makeSound() const;
 };
 
 #endif //DOG_HPP

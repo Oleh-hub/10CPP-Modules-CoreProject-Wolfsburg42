@@ -32,3 +32,8 @@ Dog::~Dog()
 {
 	std::cout << YELLOW "Dog " RED  << _type << YELLOW " is dead! (Destructor for " << this << " is called) " RESET << std::endl;
 }
+
+void Dog::makeSound() const
+{
+	std::cout << "Dog " RED << getType() << RESET ": barks!" << std::endl;
+}

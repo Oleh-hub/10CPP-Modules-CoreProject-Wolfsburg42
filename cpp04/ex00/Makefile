@@ -2,9 +2,11 @@
 NAME	= polymorphism
 CC		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
-CFLAGS += -Wpedantic -fsanitize=address
-LDFLAGS	=
-LDFLAGS += -Wpedantic -fsanitize=address
+CFLAGS += -Wpedantic
+CFLAGS += -fsanitize=address
+LDFLAGS	= 
+LDFLAGS += -Wpedantic
+LDFLAGS += -fsanitize=address
 
 SRCS 	= $(shell find . -not -path './training/*' -name '*.cpp')
 OBJS 	= $(SRCS:.cpp=.o)
