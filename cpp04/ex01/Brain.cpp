@@ -41,3 +41,11 @@ std::string const &Brain::getIdea(size_t index) const
 		return this->_ideas[99];
 	return this->_ideas[index];
 }
+
+void Brain::setIdea(const std::string &idea2get, size_t index)
+{
+	if (index > 99)
+		_ideas[99] = idea2get;
+	else
+		_ideas[index] = idea2get;
+}

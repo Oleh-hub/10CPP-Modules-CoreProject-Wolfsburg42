@@ -3,6 +3,7 @@
 Cat::Cat()
 {
 	_type = "Cat";
+	// ideas_p =  new Brain();
 	std::cout << GRAY "Cat " RED << _type << GRAY " is born! (Default constructor for " << this << " is called) " RESET << std::endl;
 }
 
@@ -30,6 +31,7 @@ Cat &Cat::operator=(const Cat &other)
 
 Cat::~Cat()
 {
+	// delete ideas_p;
 	std::cout << YELLOW "Cat " RED  << _type << YELLOW " is dead! (Destructor for " << this << " is called) " RESET << std::endl;
 }
 

@@ -1,10 +1,10 @@
-// #include "Cat.hpp"
+#include "Cat.hpp"
 #include "Brain.hpp"
 #include "colors.hpp"
 
 int main()
 {
-	std::cout << "Brain's ideas: " << std::endl;
+	std::cout << "===========Checking class Brain:===========" << std::endl;
 	std::cout << "============================" << std::endl;
 	Brain iAmBrain;
 	std::cout << "var " << BLUE << "iAmBrain " << RESET << &iAmBrain << std::endl;
@@ -21,6 +21,13 @@ int main()
 	for (int i = 0; i < 2; i++)
 		std::cout << second.getIdea(i) << std::endl;
 	std::cout << "============================" << std::endl;
-	// Cat vaska;
-	// std::cout << RED << vaska.getType() << RESET " " << std::endl;
+	const Animal* i = new Cat();
+	std::cout << "var " << BLUE << " Animal *i: " << RESET << i << std::endl;
+	std::cout << i->getType() << std::endl; 
+	i->makeSound();
+	std::cout << "============================" << std::endl;
+	Cat vaska;
+	std::cout << RED << vaska.getType() << RESET " " << std::endl;
+	std::cout << "============================" << std::endl;
+	delete i;
 }
