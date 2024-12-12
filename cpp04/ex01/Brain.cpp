@@ -1,10 +1,23 @@
 #include "Brain.hpp"
 #include <iostream>
+#include "colors.hpp"
 
 Brain::Brain()
 {
 	_ideas[0] = "jkl";	// tracing
-	std::cout << "Default constructor for \033[0;91m Brain \033[0;39m " << this << " is called!" << std::endl;
+	std::cout << "Default constructor for" RED " Brain " RESET << this << " is called!" << std::endl;
+}
+
+Brain &Brain::operator=(Brain &other)
+{
+	if (this != &other) 
+	{
+		for (int i = 0; i < 100; i++)
+			this->_ideas[i] = other._ideas[i];
+		this->_ideas[1] = "created via assignment";
+	}
+
+	return other;
 }
 
 // Brain::Brain(Brain &other)
@@ -14,7 +27,7 @@ Brain::Brain()
 
 Brain::~Brain()
 {
-	std::cout << "Destructor for \033[0;91m Brain \033[0;39m " << this << " is called!" << std::endl;
+	std::cout << "Destructor for " RED " Brain " RESET << this << " is called!" << std::endl;
 }
 
 std::string const &Brain::getIdea(size_t index) const
