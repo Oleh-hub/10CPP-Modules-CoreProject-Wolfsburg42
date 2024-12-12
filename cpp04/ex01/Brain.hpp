@@ -13,7 +13,6 @@ class Brain
 		Brain &operator=(const Brain &other);
 		~Brain();
 		std::string const &getIdea(size_t index) const;
-
 };
 
 #endif //BRAIN_HPP
