@@ -4,20 +4,26 @@
 
 Brain::Brain()
 {
-	_ideas[0] = "jkl";	// tracing
+	_ideas[0] = "jkl";			// Debug tracing
+	_ideas[1] = "defaulted";	// Debug tracing
 	std::cout << "Default constructor for" RED " Brain " RESET << this << " is called!" << std::endl;
 }
 
-Brain &Brain::operator=(Brain &other)
+Brain::Brain(const Brain &other)
+{
+	*this = other;
+	std::cout << "Copy constructor for" RED " Brain " RESET << this << " is called!" << std::endl;
+}
+
+Brain &Brain::operator=(const Brain &other)
 {
 	if (this != &other) 
 	{
 		for (int i = 0; i < 100; i++)
 			this->_ideas[i] = other._ideas[i];
-		this->_ideas[1] = "created via assignment";
 	}
-
-	return other;
+	std::cout << "Assignment operator for " RED "Brain" RESET << this <<" is called!" << std::endl;
+	return *this;
 }
 
 // Brain::Brain(Brain &other)

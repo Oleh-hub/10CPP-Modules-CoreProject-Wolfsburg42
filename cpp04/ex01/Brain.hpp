@@ -9,11 +9,11 @@ class Brain
 		
 	public:
 		Brain();
-		Brain &operator=(Brain &other);
-		// Brain(Brain &other);
+		Brain(const Brain &other);
+		Brain &operator=(const Brain &other);
 		~Brain();
 		std::string const &getIdea(size_t index) const;
-		
+
 };
 
 #endif //BRAIN_HPP
