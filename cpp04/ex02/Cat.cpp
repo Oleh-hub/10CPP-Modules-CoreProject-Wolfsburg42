@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal(), _brain(new Brain())
+Cat::Cat() : AAnimal(), _brain(new Brain())
 {
 	_type = "Cat";
 	std::cout << GRAY "Cat " RED << _type << GRAY " is born! (Default constructor for " << this << " is called) " RESET << std::endl;
@@ -12,7 +12,7 @@ Cat::Cat(std::string newCatName)
 	std::cout << GRAY "Cat " RED << _type << GRAY " is born! (Constructor for " << this << " is called) " RESET << std::endl;
 }
 
-Cat::Cat(const Cat &other) : Animal(other)
+Cat::Cat(const Cat &other) : AAnimal(other)
 {
 	this->_type = other._type;
 	_brain = new Brain(*other._brain);

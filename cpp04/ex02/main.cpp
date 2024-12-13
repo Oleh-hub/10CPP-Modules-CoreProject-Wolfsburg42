@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "colors.hpp"
 #include "Dog.hpp"
@@ -30,11 +30,11 @@ void printHeader(const std::string &string, const std::string &color) {
 
 int main() {
 	{
-		printHeader("Animal constructors", BLUE);
-		Animal *jade = new Cat();
-		Animal *rex = new Dog();
+		printHeader("AAnimal constructors", BLUE);
+		AAnimal *jade = new Cat();
+		AAnimal *rex = new Dog();
 		std::cout << std::endl;
-		printHeader("Animal deconstructors", BLUE);
+		printHeader("AAnimal deconstructors", BLUE);
 		delete(jade);
 		delete(rex);
 		std::cout << std::endl;
@@ -75,33 +75,33 @@ int main() {
 		std::cout << "Dog2 idea: " << dog2.getBrain()->getIdea(0) << std::endl;
 	}
 	{
-		printHeader("Animal array", BLUE);
+		printHeader("AAnimal array", BLUE);
 		const size_t array_size = 3 * 2;
-		Animal *animals[array_size];
+		AAnimal *AAnimals[array_size];
 		for (size_t i = 0; i < array_size / 2; i++) {
-			animals[i] = new Dog();
-			animals[i + array_size / 2] = new Cat();
+			AAnimals[i] = new Dog();
+			AAnimals[i + array_size / 2] = new Cat();
 		}
 		std::cout << std::endl;
 		for (size_t i = 0; i < array_size; i++) {
-			animals[i]->makeSound();
+			AAnimals[i]->makeSound();
 		}
 		std::cout << std::endl;
 		for (size_t i = 0; i < array_size; i++) {
-			delete(animals[i]);
+			delete(AAnimals[i]);
 		}
 		std::cout << std::endl;
 		
-		printHeader("Animal array", RED);
-		Animal *i = new Cat();
+		printHeader("AAnimal array", RED);
+		AAnimal *i = new Cat();
 		std::cout << i << std::endl;
 		delete i;
 	}
 	{
 		// SHOULD NOT COMPILE!!!
-		Animal *animal = new Animal();
-		animal->makeSound();
-		delete animal;
+		AAnimal *AAnimal = new AAnimal();
+		AAnimal->makeSound();
+		delete AAnimal;
 	}
 	return 0;
 }

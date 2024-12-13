@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 
-Dog::Dog() :  Animal(), _brain(new Brain())
+Dog::Dog() :  AAnimal(), _brain(new Brain())
 {
 	_type = "Dog";
 	std::cout << GRAY "Dog " RED << _type << GRAY " is born! (Default constructor for " << this << " is called) " RESET << std::endl;
@@ -12,7 +12,7 @@ Dog::Dog(std::string newDogName)
 	std::cout << GRAY "Dog " RED  << _type << GRAY " is born! (Constructor for " << this << " is called) " RESET << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Dog::Dog(const Dog &other) : AAnimal(other)
 {
 	this->_type = other._type;
 	_brain = new Brain(*other._brain);
