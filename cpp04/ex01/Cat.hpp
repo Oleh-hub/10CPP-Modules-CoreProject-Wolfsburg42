@@ -10,8 +10,8 @@ class Cat : public Animal
 	public:
 		Cat();
 		Cat(std::string newCatName);
-		Cat(const Cat &other); // copy constructor
-		Cat &operator= (const Cat &other); // assignment operator
+		Cat(const Cat &other); 				// copy constructor
+		Cat &operator= (const Cat &other); 	// assignment operator
 		~Cat();
 		void makeSound() const;
 		Brain *getBrain() const;

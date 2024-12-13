@@ -3,9 +3,11 @@ NAME	= polymorphism
 CC		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 CFLAGS += -Wpedantic
+# garantees no memory leaks:
 CFLAGS += -fsanitize=address
 LDFLAGS	= 
 LDFLAGS += -Wpedantic
+# garantees no memory leaks:
 LDFLAGS += -fsanitize=address
 
 SRCS 	= $(shell find . -not -path './training/*' -not -name 'main1.cpp' -not -name 'main2.cpp' -name '*.cpp')

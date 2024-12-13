@@ -65,7 +65,7 @@ int main() {
 		std::cout << "Copycat idea:      " << copy_cat.getBrain()->getIdea(0) << std::endl;
 		std::cout << std::endl;
 	}
-	/* {
+	 {
 		printHeader("Copy assignment operator", BLUE);
 		Dog dog1;
 		Dog dog2;
@@ -95,7 +95,7 @@ int main() {
 		printHeader("Animal array", RED);
 		Animal *i = new Cat();
 		std::cout << i << std::endl;
-		
-	} */
+		delete i;
+	}
 	return 0;
 }
