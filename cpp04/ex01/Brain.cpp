@@ -4,7 +4,6 @@
 
 Brain::Brain()
 {
-	_ideas[0] = "defaulted";			// Debug tracing
 	std::cout << "Default constructor for" RED " Brain " RESET << this << " is called!" << std::endl;
 }
 

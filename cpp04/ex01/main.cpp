@@ -7,11 +7,13 @@ int main()
 	std::cout << "===========Checking class Brain:===========" << std::endl;
 	std::cout << "============================" << std::endl;
 	Brain iAmBrain;
+	iAmBrain.setIdea("I am iAmBrain!", 0);
 	std::cout << "var " << BLUE << "iAmBrain " << RESET << &iAmBrain << std::endl;
 	for (int i = 0; i < 2; i++)
 		std::cout << iAmBrain.getIdea(i) << std::endl;
 	std::cout << "============================" << std::endl;
 	Brain third(iAmBrain);
+	third.setIdea("I am third!", 0);
 	std::cout << "var " << BLUE << "third " << RESET << &third << std::endl;
 	for (int i = 0; i < 2; i++)
 		std::cout << third.getIdea(i) << std::endl;
@@ -20,6 +22,11 @@ int main()
 	std::cout << "var " << BLUE << "second " << RESET << &second << std::endl;
 	for (int i = 0; i < 2; i++)
 		std::cout << second.getIdea(i) << std::endl;
+	second.setIdea("I can set anything in!", 1);
+	std::cout << "var " << BLUE << "second " << RESET << &second << std::endl;
+	for (int i = 0; i < 2; i++)
+		std::cout << second.getIdea(i) << std::endl;
+	std::cout << "===========Checking somthing else:===========" << std::endl;
 	std::cout << "============================" << std::endl;
 	const Animal* i = new Cat();
 	std::cout << "var " << BLUE << " Animal *i: " << RESET << i << std::endl;
