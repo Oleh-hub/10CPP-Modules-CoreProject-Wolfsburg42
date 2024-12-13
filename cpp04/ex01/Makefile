@@ -8,7 +8,7 @@ LDFLAGS	=
 LDFLAGS += -Wpedantic
 LDFLAGS += -fsanitize=address
 
-SRCS 	= $(shell find . -not -path './training/*' -not -name 'main1.cpp' -name '*.cpp')
+SRCS 	= $(shell find . -not -path './training/*' -not -name 'main1.cpp' -not -name 'main2.cpp' -name '*.cpp')
 OBJS 	= $(SRCS:.cpp=.o)
 
 # Colors

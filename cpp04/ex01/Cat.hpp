@@ -3,10 +3,10 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Cat : public Animal// , public Brain
+class Cat : public Animal
 {
 	private:
-		Brain *ideas_p;
+		Brain *_brain;
 	public:
 		Cat();
 		Cat(std::string newCatName);
@@ -14,6 +14,7 @@ class Cat : public Animal// , public Brain
 		Cat &operator= (const Cat &other); // assignment operator
 		~Cat();
 		void makeSound() const;
+		Brain *getBrain() const;
 };
 
 #endif //CAT_HPP
