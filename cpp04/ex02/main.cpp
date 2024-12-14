@@ -98,10 +98,10 @@ int main() {
 		delete i;
 	}
 	{
-		// SHOULD NOT COMPILE!!!
-		AAnimal *AAnimal = new AAnimal();
-		AAnimal->makeSound();
-		delete AAnimal;
+		// // SHOULD NOT COMPILE!!!
+		// AAnimal *AAnimal = new AAnimal();
+		// AAnimal->makeSound();
+		// delete AAnimal;
 	}
 	return 0;
 }

@@ -1,4 +1,5 @@
 #include "AMateria.hpp"
+#include "Ice.hpp"
 #include "colors.hpp"
 
 void printHeader(const std::string &string, const std::string &color) {
@@ -30,10 +31,20 @@ int main()
 {
 	{
 		printHeader("AMateria canonical form b4 turing the class AMateria into an absturct", BLUE);
-		AMateria a;
-		AMateria b("bMateria");
-		AMateria c(b);
-		c = a;
+		// AMateria a;
+		// AMateria b("bMateria");
+		// AMateria c(b);
+		// std::cout << " c = " << c.getType() << std::endl;
+		// c = a;
+		// std::cout << " c = " << c.getType() << std::endl;
+	}
+	{
+		printHeader("Ice canonical form b4 turing the class Ice", BLUE);
+		Ice a;
+		std::cout << a.getType() << " " << &a << std::endl;
+		AMateria *b = new Ice();
+		std::cout << b->getType() << " " << b << std::endl;
+		delete b; // calls ~Ice() because of 'virtual ~AMateria()'
 	}
 	// IMateriaSource* src = new MateriaSource();
 	// src->learnMateria(new Ice());

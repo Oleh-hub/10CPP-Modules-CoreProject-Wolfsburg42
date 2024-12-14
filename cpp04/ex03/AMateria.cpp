@@ -31,3 +31,8 @@ AMateria::~AMateria()
 	std::cout << GRAY "AMateria _type " RED << _type << GRAY " " << this << " is being destructed"  RESET << std::endl;
 }
 
+std::string const & AMateria::getType() const
+{
+	return this->_type;
+}
+
