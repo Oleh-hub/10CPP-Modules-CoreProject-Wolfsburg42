@@ -42,9 +42,12 @@ int main()
 		printHeader("Ice canonical form b4 turing the class Ice", BLUE);
 		Ice a;
 		std::cout << a.getType() << " " << &a << std::endl;
-		AMateria *b = new Ice();
-		std::cout << b->getType() << " " << b << std::endl;
-		delete b; // calls ~Ice() because of 'virtual ~AMateria()'
+		Ice b(a);
+		std::cout << b.getType() << " " << &b << std::endl;
+		a = b;
+		AMateria *c = new Ice();
+		std::cout << c->getType() << " " << c << std::endl;
+		delete c; // calls ~Ice() because of 'virtual ~AMateria()'
 	}
 	// IMateriaSource* src = new MateriaSource();
 	// src->learnMateria(new Ice());

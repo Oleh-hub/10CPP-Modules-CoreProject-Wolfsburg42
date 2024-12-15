@@ -16,7 +16,7 @@ AMateria::AMateria(const AMateria &other) : _type(other._type)
 	std::cout << GRAY "AMateria _type " RED << _type << GRAY " " << this << " is being constructed by copying"  RESET << std::endl;
 }
 
-AMateria &AMateria::operator=(const AMateria &other)
+AMateria & AMateria::operator=(const AMateria &other)
 {
 	if (this != &other)
 	{
