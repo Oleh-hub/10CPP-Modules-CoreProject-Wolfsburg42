@@ -70,13 +70,30 @@ MateriaSource::~MateriaSource()
 }
 
 // under construction
-void learnMateria(AMateria*)
+/* 
+learnMateria() attempts to add a new AMateria to the _sources array
+ by finding an empty slot, cloning the materia, and storing the clone. If 
+the array is full, it deletes the materia and prints an error message.
+NOTE - always delete -s the object m became as the parameter ! 
+ */
+void MateriaSource::learnMateria(AMateria *m)
 {
-
+	for (int i = 0; i < 4; i++)
+	{
+		if (_source[i] == NULL)
+		{
+			_source[i] = m->clone();
+			std::cout << "The Materia " << m->getType() << " was learned into _source[" << i << "]" << std::endl;
+			delete m;
+			return;
+		}
+	}
+	std::cout << "The Materia" << m->getType() << " WAS NOT learned because of _source space lackerge" << std::endl;
+	delete m;
 }
 
 //  under construction
-AMateria* createMateria(std::string const & type)
+AMateria* MateriaSource::createMateria(std::string const & type)
 {
 
 }

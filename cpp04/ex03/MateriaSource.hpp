@@ -14,7 +14,7 @@ class MateriaSource : public IMateriaSource
         MateriaSource &operator=(const MateriaSource &other);
         ~MateriaSource();
 
-        void learnMateria(AMateria*);
-		AMateria* createMateria(std::string const & type);
+        void learnMateria(AMateria *m); // is to be called with "new" because m is "delete-d" inside
+        AMateria* createMateria(std::string const & type);
 };
 #endif  //MATERIASOURCE_HPP
