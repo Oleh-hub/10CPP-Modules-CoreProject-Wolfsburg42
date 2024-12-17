@@ -2,6 +2,7 @@
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
+#include "Cure.hpp"
 #include "colors.hpp"
 
 void printHeader(const std::string &string, const std::string &color)
@@ -50,11 +51,8 @@ void testIce()
 	delete c; // calls ~Ice() because of 'virtual ~AMateria()'
 }
 
-int main()
+void test_learncreateMateria()
 {
-	testAMateria();
-	// testIce();
-
 	printHeader("Testing classes IMateriaSource and AMateria", GREEN);
 	IMateriaSource* src = new MateriaSource();
 	for (int i = 0; i < 5; i++)
@@ -64,10 +62,17 @@ int main()
 	std::cout << GREEN << tmp->getType() << RESET << std::endl;
 	delete src;
 	delete tmp;
+}
 
-	// IMateriaSource* src = new MateriaSource();
-	// src->learnMateria(new Ice());
-	// src->learnMateria(new Cure());
+int main()
+{
+	testAMateria();
+	// testIce();
+	// test_learncreateMateria();
+
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 	// ICharacter* me = new Character("me");
 	// AMateria* tmp;
 	// tmp = src->createMateria("ice");
@@ -79,6 +84,6 @@ int main()
 	// me->use(1, *bob);
 	// delete bob;
 	// delete me;
-	// delete src;
-	// return 0;
+	delete src;
+	return 0;
 }
