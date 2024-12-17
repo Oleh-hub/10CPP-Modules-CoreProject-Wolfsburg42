@@ -55,7 +55,17 @@ int main()
 	testAMateria();
 	// testIce();
 
+	printHeader("Testing classes IMateriaSource and AMateria", GREEN);
 	IMateriaSource* src = new MateriaSource();
+	for (int i = 0; i < 5; i++)
+		src->learnMateria(new Ice());
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	std::cout << GREEN << tmp->getType() << RESET << std::endl;
+	delete src;
+	delete tmp;
+
+	// IMateriaSource* src = new MateriaSource();
 	// src->learnMateria(new Ice());
 	// src->learnMateria(new Cure());
 	// ICharacter* me = new Character("me");
@@ -69,6 +79,6 @@ int main()
 	// me->use(1, *bob);
 	// delete bob;
 	// delete me;
-	delete src;
+	// delete src;
 	// return 0;
 }
