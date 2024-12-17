@@ -88,12 +88,17 @@ void MateriaSource::learnMateria(AMateria *m)
 			return;
 		}
 	}
-	std::cout << "The Materia" << m->getType() << " WAS NOT learned because of _source space lackerge" << std::endl;
+	std::cout << "The Materia" << m->getType() << " WAS NOT learned because of _source space leckerge" << std::endl;
 	delete m;
 }
 
-//  under construction
+//  under construction. finished. commments needed
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-
+	for (int i = 0; i < 4; i++)
+	{
+		if (_source[i] && _source[i]->getType() == type)
+			return _source[i]->clone();
+	}
+	return NULL;
 }
