@@ -92,7 +92,11 @@ void MateriaSource::learnMateria(AMateria *m)
 	delete m;
 }
 
-//  under construction. finished. commments needed
+//  under construction. finished.
+ /* function searches the _source array for an AMateria object that matches the specified type. 
+ If it finds a match, it returns a new instance of that AMateria by cloning it. 
+ If no match is found, it returns NULL. */
+
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4; i++)
