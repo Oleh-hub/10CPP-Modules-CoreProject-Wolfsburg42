@@ -7,6 +7,12 @@ Character::Character() : _name("Nobody")
          _inventory[i] = NULL;
 }
 
+Character::Character(const std::string &name) : _name(name)
+{
+    for (int i = 0; i < 4; i++)
+         _inventory[i] = NULL;
+}
+
 std::string const & Character::getName() const
 {
     return this->_name;

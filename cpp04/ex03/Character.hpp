@@ -1,6 +1,6 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
-# include "AMateria.hpp"
+// # include "AMateria.hpp"
 # include "ICharacter.hpp"
 # include <iostream>
 class Character : ICharacter
@@ -16,6 +16,7 @@ class Character : ICharacter
 		// virtual void use(int idx, Character& target);
 
         Character();
+        Character(const std::string &name);
 };
 
 #endif // CHARACTER_HPP
