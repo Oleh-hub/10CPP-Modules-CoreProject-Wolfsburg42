@@ -1,6 +1,5 @@
 #include "Character.hpp"
 #include "AMateria.hpp"
-#include "colors.hpp"
 
 Character::Character() : _name("Nobody")
 {

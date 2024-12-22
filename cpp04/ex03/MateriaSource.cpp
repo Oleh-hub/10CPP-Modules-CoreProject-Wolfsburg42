@@ -102,7 +102,11 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	for (int i = 0; i < 4; i++)
 	{
 		if (_source[i] && _source[i]->getType() == type)
+		{
+			std::cout << "Materia " << RED << type << RESET  << " was created " << i << std::endl;
 			return _source[i]->clone();
+		}
 	}
+	std::cout << "_source[4] " << "is full, could not add Materia " << RED << type << RESET << std::endl;
 	return NULL;
 }

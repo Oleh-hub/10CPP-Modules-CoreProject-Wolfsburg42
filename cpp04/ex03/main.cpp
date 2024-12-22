@@ -3,7 +3,6 @@
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-// #include "ICharacter.hpp"
 #include "Character.hpp"
 #include "colors.hpp"
 
@@ -79,13 +78,14 @@ int main()
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
+	// me->equip(tmp); // roi
 	tmp = src->createMateria("cure");
 	// me->equip(tmp);
 	// ICharacter* bob = new Character("bob");
 	// me->use(0, *bob);
 	// me->use(1, *bob);
 	// delete bob;
-	delete tmp; // 22.12
+	// delete tmp; // roi
 	delete me;
 	delete src;
 	return 0;
