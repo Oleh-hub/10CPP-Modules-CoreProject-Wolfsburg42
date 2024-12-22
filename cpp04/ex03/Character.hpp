@@ -3,7 +3,7 @@
 // # include "AMateria.hpp"
 # include "ICharacter.hpp"
 # include <iostream>
-class Character : ICharacter
+class Character : public ICharacter
 {
 	private:
         std::string _name;
