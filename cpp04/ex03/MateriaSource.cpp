@@ -39,27 +39,27 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 // assignment operator=
 MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 {
-    if (this != &other)
-    {
-        // First, delete the current resources
-        for (int i = 0; i < 4; i++)
-        {
-            if (_source[i])
-            {
-                delete _source[i];
-                _source[i] = NULL; // Set to NULL to avoid dangling pointers
-            }
-        }
-        // Then, copy the resources from the other object
-        for (int i = 0; i < 4; i++)
-        {
-            if (other._source[i])
-                _source[i] = other._source[i]->clone();
-            else
-                _source[i] = NULL; // Set to NULL if other._source[i] is NULL
-        }
-    }
-    return *this;
+	if (this != &other)
+	{
+		// First, delete the current resources
+		for (int i = 0; i < 4; i++)
+		{
+			if (_source[i])
+			{
+				delete _source[i];
+				_source[i] = NULL; // Set to NULL to avoid dangling pointers
+			}
+		}
+		// Then, copy the resources from the other object
+		for (int i = 0; i < 4; i++)
+		{
+			if (other._source[i])
+				_source[i] = other._source[i]->clone();
+			else
+				_source[i] = NULL; // Set to NULL if other._source[i] is NULL
+		}
+	}
+	return *this;
 }
 
 MateriaSource::~MateriaSource()

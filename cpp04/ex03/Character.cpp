@@ -1,5 +1,6 @@
 #include "Character.hpp"
 #include "AMateria.hpp"
+#include "colors.hpp"
 
 Character::Character() : _name("Nobody")
 {
@@ -20,14 +21,14 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	for (int i = 4; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m;
-			std::cout << getName() << ": Added " << m->getType() << " Materia into inventory slot " << i << std::endl;
+			std::cout << getName() << ": Added "  << RED << m->getType() << RESET  << " Materia into inventory slot " << i << std::endl;
 			return;
 		}
-	std::cout << getName() << ": Inventory is full, could not add " << m->getType() << " Materia." << std::endl;
+	std::cout << getName() << ": Inventory is full, could not add " << RED << m->getType() << RESET << " Materia." << std::endl;
 }
 
 Character::~Character()
