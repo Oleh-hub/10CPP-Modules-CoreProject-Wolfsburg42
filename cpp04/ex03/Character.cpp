@@ -72,7 +72,7 @@ void Character::use(int idx, Character& target)
 	//  std::string _name;			//
 
 	//  std::cout << _name << ": _inventory[" << idx << "]==" << _inventory[idx]->getType() << " was used on " << target.getName() << std::endl;
-	 std::cout << this->_name;
+	 std::cout << RED << this->_name << RESET;
 	 _inventory[idx]->use(target);
-	 std::cout << " was used on " << target.getName() << std::endl;
+	 std::cout << GREEN << target.getName() << RESET << std::endl;
 }
