@@ -3,7 +3,7 @@
 
 Cure::Cure() //:  _type("Cure")
 {
-	this->_type = "Cure";
+	this->_type = "cure";
 }
 
 Cure::Cure(const Cure &other) : AMateria(other)

@@ -20,6 +20,11 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+	if (m==NULL)
+	{
+		std::cout << getName() << ": Could not equip object. Unknown reference!" << std::endl;
+		return;
+	}
 	for (int i = 0; i < 4; i++)
 		if (_inventory[i] == NULL)
 		{
@@ -40,4 +45,23 @@ Character::~Character()
 			_inventory[i] = NULL;
 		}
 	}
+}
+
+// operator overload
+Character & Character::operator=(const Character &other)
+{
+	std::cout << "Character copy assignment operator is being called" << std::endl;
+	if (this != &other)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			delete _inventory[i];
+			if (other._inventory[i])
+				_inventory[i] = other._inventory[i]->clone();
+			else
+				_inventory[i] = NULL;
+		}
+		_name = other._name;
+	}
+	return *this;
 }

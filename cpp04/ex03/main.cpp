@@ -80,9 +80,9 @@ int main()
 	me->equip(tmp);
 	// me->equip(tmp); // roi
 	tmp = src->createMateria("cure");
-	// me->equip(tmp);
-	// ICharacter* bob = new Character("bob");
-	// me->use(0, *bob);
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
 	// me->use(1, *bob);
 	// delete bob;
 	// delete tmp; // roi
