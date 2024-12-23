@@ -65,3 +65,14 @@ Character & Character::operator=(const Character &other)
 	}
 	return *this;
 }
+
+void Character::use(int idx, Character& target)
+{
+	//  AMateria *_inventory[idx];	//
+	//  std::string _name;			//
+
+	//  std::cout << _name << ": _inventory[" << idx << "]==" << _inventory[idx]->getType() << " was used on " << target.getName() << std::endl;
+	 std::cout << this->_name;
+	 _inventory[idx]->use(target);
+	 std::cout << " was used on " << target.getName() << std::endl;
+}

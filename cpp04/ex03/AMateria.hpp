@@ -1,7 +1,8 @@
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
 # include <iostream>
-#include "colors.hpp"
+# include "colors.hpp"
+# include "Character.hpp"
 
 class AMateria
 {
@@ -15,7 +16,7 @@ class AMateria
 		virtual ~AMateria();
 		std::string const & getType() const; //Returns the materia _type
 		virtual AMateria* clone() const = 0;
-		// virtual void use(ICharacter& target);
+		virtual void use(ICharacter& target);
 };
 
 #endif // AMATERIA_HPP
