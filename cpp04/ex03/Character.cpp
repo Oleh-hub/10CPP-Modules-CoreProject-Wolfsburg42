@@ -1,5 +1,5 @@
 #include "Character.hpp"
-#include "AMateria.hpp"
+// #include "AMateria.hpp"
 
 Character::Character() : _name("Nobody")
 {

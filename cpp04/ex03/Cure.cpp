@@ -1,5 +1,6 @@
 #include "Cure.hpp"
 #include "colors.hpp"
+#include "ICharacter.hpp"
 
 Cure::Cure() //:  _type("Cure")
 {

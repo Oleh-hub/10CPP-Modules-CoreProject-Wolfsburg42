@@ -1,9 +1,9 @@
-#include "AMateria.hpp"
-#include "IMateriaSource.hpp"
+// #include "AMateria.hpp"
+// #include "IMateriaSource.hpp"
+#include "Character.hpp"
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-#include "Character.hpp"
 #include "colors.hpp"
 
 void printHeader(const std::string &string, const std::string &color)
