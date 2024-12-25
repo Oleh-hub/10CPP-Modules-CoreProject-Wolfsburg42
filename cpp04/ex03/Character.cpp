@@ -1,5 +1,4 @@
 #include "Character.hpp"
-// #include "AMateria.hpp"
 
 Character::Character() : _name("Nobody")
 {
@@ -66,7 +65,7 @@ Character & Character::operator=(const Character &other)
 	return *this;
 }
 
-void Character::use(int idx, Character& target)
+void Character::use(int idx, ICharacter& target)
 {
 	//  AMateria *_inventory[idx];	//
 	//  std::string _name;			//

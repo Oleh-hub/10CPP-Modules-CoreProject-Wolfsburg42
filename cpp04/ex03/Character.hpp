@@ -1,7 +1,7 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 # include "ICharacter.hpp"
-# include "AMateria.hpp"
+// # include "AMateria.hpp"
 # include <iostream>
 
 class Character : public ICharacter
@@ -15,7 +15,7 @@ class Character : public ICharacter
 
 		virtual void equip(AMateria* m);
 		// virtual void unequip(int idx);
-		virtual void use(int idx, Character & target);
+		virtual void use(int idx, ICharacter & target);
 
         Character();
         Character(const std::string &name);
