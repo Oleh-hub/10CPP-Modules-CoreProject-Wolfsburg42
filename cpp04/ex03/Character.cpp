@@ -28,7 +28,7 @@ void Character::equip(AMateria* m)
 		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m;
-			std::cout << getName() << ": Added "  << RED << m->getType() << RESET  << " Materia into inventory slot " << i << std::endl;
+			std::cout << RED << getName() << RESET << ": Added "  << RED << m->getType() << RESET  << " Materia into inventory slot " << i << std::endl;
 			return;
 		}
 	std::cout << getName() << ": Inventory is full, could not add " << RED << m->getType() << RESET << " Materia." << std::endl;
@@ -67,11 +67,8 @@ Character & Character::operator=(const Character &other)
 
 void Character::use(int idx, ICharacter& target)
 {
-	//  AMateria *_inventory[idx];	//
-	//  std::string _name;			//
-
 	//  std::cout << _name << ": _inventory[" << idx << "]==" << _inventory[idx]->getType() << " was used on " << target.getName() << std::endl;
 	 std::cout << RED << this->_name << RESET;
 	 _inventory[idx]->use(target);
-	 std::cout << GREEN << target.getName() << RESET << std::endl;
+	//  std::cout << GREEN << target.getName() << RESET << std::endl;
 }
