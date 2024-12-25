@@ -95,6 +95,8 @@ int main()
 	testAMateria();
 	testIce();
 	test_learncreateMateria();
-	printHeader("Testing with subject test", RED);
+	printHeader("Testing with subject test with my own buty features", RED);
 	subjectTest();
+	// printHeader("Testing with subject test pure", YELLOW);
+	// subjectTest();
 }
