@@ -78,6 +78,12 @@ int subjectTest()
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	me->unequip(2);
+	me->unequip(3);
+	me->unequip(4);
 
 	ICharacter* bob = new Character("bob");
 

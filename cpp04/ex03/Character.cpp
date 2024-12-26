@@ -21,17 +21,30 @@ void Character::equip(AMateria* m)
 {
 	if (m==NULL)
 	{
-		std::cout << getName() << ": Could not equip object. Unknown reference!" << std::endl;
+		std::cout << RED << getName() << RESET ": Could not equip object with NULL reference!" << std::endl;
 		return;
 	}
 	for (int i = 0; i < 4; i++)
 		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m;
-			std::cout << RED << getName() << RESET << ": Added "  << RED << m->getType() << RESET  << " Materia into inventory slot " << i << std::endl;
+			std::cout << RED << getName() << RESET ": has equiped " RED << m->getType() << RESET " Materia into inventory slot " << i << std::endl;
 			return;
 		}
-	std::cout << getName() << ": Inventory is full, could not add " << RED << m->getType() << RESET << " Materia." << std::endl;
+	std::cout << RED << getName() << RESET ": Inventory is full, could not add " RED << m->getType() << RESET " Materia." << std::endl;
+}
+
+// delete object of class  Materia is mandatory to avdoid memory leak
+void Character::unequip(int idx)
+{
+	if (idx >= 0 && idx <= 3 && _inventory[idx])
+	{
+		std::cout <<  RED << getName() << RESET ": Materia " RED << _inventory[idx]->getType() << RESET " from _inventory[" RED << idx << RESET << "] is being unequiped" << std::endl;
+		delete _inventory[idx];
+		_inventory[idx] = NULL;
+	}
+	else
+		std::cout <<  RED << getName() << RESET ": there is NO Materia in _inventory[" RED << idx << RESET << "] to unequip" << std::endl;
 }
 
 Character::~Character()
