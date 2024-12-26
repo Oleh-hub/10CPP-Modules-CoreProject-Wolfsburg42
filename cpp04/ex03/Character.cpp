@@ -80,8 +80,6 @@ Character & Character::operator=(const Character &other)
 
 void Character::use(int idx, ICharacter& target)
 {
-	//  std::cout << _name << ": _inventory[" << idx << "]==" << _inventory[idx]->getType() << " was used on " << target.getName() << std::endl;
 	 std::cout << RED << this->_name << RESET;
 	 _inventory[idx]->use(target);
-	//  std::cout << GREEN << target.getName() << RESET << std::endl;
 }
