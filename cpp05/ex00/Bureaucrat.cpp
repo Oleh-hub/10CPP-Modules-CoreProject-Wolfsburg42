@@ -26,3 +26,13 @@ Bureaucrat & Bureaucrat::operator=(const Bureaucrat &other)
 Bureaucrat::~Bureaucrat()
 {
 }
+
+std::string Bureaucrat::getName() const
+{
+	return this->_name;
+}
+
+int Bureaucrat::getGrade() const
+{
+	return this->_grade;
+}
