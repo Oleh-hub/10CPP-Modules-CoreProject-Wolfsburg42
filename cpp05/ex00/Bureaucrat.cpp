@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("DefaulName"), _grade(150)
+Bureaucrat::Bureaucrat() : _name("Incognito"), _grade(150)
 {
 }
 
@@ -35,4 +35,10 @@ std::string Bureaucrat::getName() const
 int Bureaucrat::getGrade() const
 {
 	return this->_grade;
+}
+
+std::ostream & operator<<(std::ostream &out, const Bureaucrat &rhc)
+{
+	out << rhc.getName() << ", bureaucrat grade " << rhc.getGrade() << ".";
+	return out;
 }
