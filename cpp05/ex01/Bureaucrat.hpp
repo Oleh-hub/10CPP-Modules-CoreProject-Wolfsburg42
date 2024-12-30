@@ -27,7 +27,6 @@ class Bureaucrat
 
 		std::string getName() const;
 		int getGrade() const;
-		
 		// creatig the child classes of exception to substitue virtual exception::what() - roi 241229
 		class GradeTooHighException : public std::exception
 		{
