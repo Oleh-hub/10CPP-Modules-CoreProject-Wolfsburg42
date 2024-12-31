@@ -61,3 +61,19 @@ Form::Form(const Form &rhs)
 Form::~Form()
 {
 }
+
+std::ostream & operator<<(std::ostream &out, const Form &rhs)
+{
+	out << "Form: " << rhs.getName() << "has grade to sign " << rhs.qetGrade2sign() << ", grade to execute "<< rhs.getGrade2exe() << "current state if it is signed: "<< rhs.getSigned();
+	return out;
+}
+
+const char * Form::GradeTooHighException::what() const throw()
+{
+	return "The Form grade is too high!";
+}
+
+const char * Form::GradeTooLowException::what() const throw()
+{
+	return "The Form grade is too low!";
+}
