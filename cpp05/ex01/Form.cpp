@@ -41,6 +41,23 @@ Form::Form(std::string &name, int grade2sign, int grade2exe) : _name(name), _sig
 	// grade2sign and grade2exe to be checked
 }
 
+Form & Form::operator=(const Form &rhs)
+{
+	if (this!= &rhs)
+	{
+		_name = rhs._name;
+		_signed = rhs._signed;
+		_grade2sign = rhs._grade2sign;
+		_grade2exe = rhs._grade2exe;
+	}
+	return *this;
+}
+
+Form::Form(const Form &rhs)
+{
+	*this = rhs;
+}
+
 Form::~Form()
 {
 }
