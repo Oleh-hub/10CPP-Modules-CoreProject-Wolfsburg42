@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
@@ -54,7 +55,7 @@ int main()
 		std::cerr << err.what() << std::endl;
 	}
 	
-		try
+	try
 	{
 		/* do some stuff with bureaucrats */
 		std::cout << GREEN "Checking too high/low in in decGrade() / incGrade():" RESET << std::endl;
@@ -73,4 +74,14 @@ int main()
 		/* handle exception */
 		std::cerr << err.what() << std::endl;
 	}
+
+	try
+	{
+		// Form A1; // constructor by default is private therefore - an error during compilation
+	}
+	catch(const std::exception& err)
+	{
+		std::cerr << err.what() << '\n';
+	}
+	
 }

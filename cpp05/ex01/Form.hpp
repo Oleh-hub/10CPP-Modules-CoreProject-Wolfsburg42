@@ -11,12 +11,14 @@ class Form
 		bool _signed;
 		const int _grade2sign;
 		const int _grade2exe;
+		Form();
 
 	public:
 		std::string getName() const;
-		bool getSigned();
-		int qetGrade2sighn();
-		int getGrade2exe();
+		bool getSigned() const;
+		int qetGrade2sign() const;
+		int getGrade2exe() const;
+		
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -28,6 +30,11 @@ class Form
 				virtual const char*what() const throw();
 		};
 		void beSigned (const Bureaucrat &rhs);
+		
+		Form(std::string &name, int grade2sign, int grade2exe);
+		Form (const Form &rhs);
+		Form & operator=(const Form &rhs);
+		~Form();
 };
 
 std::ostream & operator<<(std::ostream &out, const Form &rhs);

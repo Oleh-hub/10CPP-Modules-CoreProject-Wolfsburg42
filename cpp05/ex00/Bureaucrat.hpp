@@ -1,6 +1,7 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <iostream>
+# include <string>
 # include <exception>
 # define RESET		"\033[0;39m"
 # define GRAY 		"\033[0;90m"
