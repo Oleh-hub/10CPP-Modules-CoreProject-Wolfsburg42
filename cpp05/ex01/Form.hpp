@@ -1,8 +1,10 @@
 #ifndef FORM_HPP
 # define FORM_HPP
+# include "Bureaucrat.hpp"
 # include <iostream>
 # include <exception>
-# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -31,7 +33,7 @@ class Form
 		};
 		void beSigned (const Bureaucrat &rhs);
 		
-		Form(std::string &name, int grade2sign, int grade2exe);
+		Form(std::string const &name, int grade2sign, int grade2exe);
 		Form & operator=(const Form &rhs);
 		Form (const Form &rhs);
 		~Form();

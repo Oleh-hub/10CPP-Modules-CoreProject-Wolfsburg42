@@ -42,7 +42,7 @@ void Form::beSigned (const Bureaucrat &rhs)
 	}
 }
 
-Form::Form(std::string &name, int grade2sign, int grade2exe) : _name(name), _signed(false), _grade2sign(grade2sign), _grade2exe(grade2exe)
+Form::Form(std::string const &name, int grade2sign, int grade2exe) : _name(name), _signed(false), _grade2sign(grade2sign), _grade2exe(grade2exe)
 {
 	// grade2sign and grade2exe checking
 	if (grade2sign > 150 || grade2exe > 150)
@@ -74,7 +74,7 @@ Form::~Form()
 
 std::ostream & operator<<(std::ostream &out, const Form &rhs)
 {
-	out << "Form: " << rhs.getName() << "has grade to sign " << rhs.qetGrade2sign() << ", grade to execute "<< rhs.getGrade2exe() << "current state if it is signed: "<< rhs.getSigned();
+	out << "Form: " << rhs.getName() << "has grade to sign " << rhs.qetGrade2sign() << ", grade to execute "<< rhs.getGrade2exe() << ", current state 'if it is signed': "<< rhs.getSigned();
 	return out;
 }
 

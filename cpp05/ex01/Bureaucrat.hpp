@@ -1,7 +1,8 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
-# include <iostream>
+# include "Form.hpp"
 # include <exception>
+# include <iostream>
 # define RESET		"\033[0;39m"
 # define GRAY 		"\033[0;90m"
 # define RED 		"\033[0;91m"
@@ -11,7 +12,8 @@
 # define MAGENTA 	"\033[0;95m"
 # define CYAN 		"\033[0;96m"
 # define WHITE 		"\033[0;97m"
-# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
