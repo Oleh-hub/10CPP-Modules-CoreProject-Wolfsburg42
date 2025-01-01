@@ -20,11 +20,17 @@ int Form::getGrade2exe() const
 	return _grade2exe;
 }
 
+/*  250101 roi
+I am not sure if an attempt to sign the Form by inproper rate bureaucrat should be terminated by thrown error mmsg
+if should net throw must be replaced with  std::cout << "The Form grade is too high!"; */
 void Form::beSigned (const Bureaucrat &rhs)
 {
 	// <bureaucrat> signed <form>
 	if (!_signed && _grade2sign >= rhs.getGrade())
+	{
+		this->_signed = true;
 		std::cout << rhs.getName() << " signed " << getName()  << std::endl;
+	}
 	else 
 	{
 		// <bureaucrat> couldn’t sign <form> because <reason>.
@@ -32,13 +38,17 @@ void Form::beSigned (const Bureaucrat &rhs)
 		if (_signed)
 			std::cout << "the form is already signed" << std::endl;
 		else
-			std::cout << "the bureaucrat grade is not high enough" << std::endl;
+			throw GradeTooHighException(); // "The Form grade is too high!"
 	}
 }
 
 Form::Form(std::string &name, int grade2sign, int grade2exe) : _name(name), _signed(false), _grade2sign(grade2sign), _grade2exe(grade2exe)
 {
-	// grade2sign and grade2exe to be checked
+	// grade2sign and grade2exe checking
+	if (grade2sign > 150 || grade2exe > 150)
+		throw GradeTooHighException();
+	if (grade2sign < 1 || grade2exe < 1)
+		throw GradeTooLowException();
 }
 
 Form & Form::operator=(const Form &rhs)

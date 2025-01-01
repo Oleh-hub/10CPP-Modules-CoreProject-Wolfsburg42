@@ -71,3 +71,8 @@ void Bureaucrat::decGrade()
 		throw GradeTooLowException();
 	_grade++;
 }
+
+void Bureaucrat::signForm(Form &rhs)
+{
+	rhs.beSigned(*this);
+}

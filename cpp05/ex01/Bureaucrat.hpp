@@ -11,6 +11,7 @@
 # define MAGENTA 	"\033[0;95m"
 # define CYAN 		"\033[0;96m"
 # define WHITE 		"\033[0;97m"
+# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -41,6 +42,7 @@ class Bureaucrat
 		// increment or decrement the bureaucrat grade
 		void incGrade();
 		void decGrade();
+		void signForm(Form &rhs);
 };
 
 std::ostream & operator<<(std::ostream &out, const Bureaucrat &rhc);
