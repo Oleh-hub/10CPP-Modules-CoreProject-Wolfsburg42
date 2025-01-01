@@ -38,7 +38,8 @@ void Form::beSigned (const Bureaucrat &rhs)
 		if (_signed)
 			std::cout << "the form is already signed" << std::endl;
 		else
-			throw GradeTooHighException(); // "The Form grade is too high!"
+			// throw GradeTooHighException(); // "The Form grade is too high!"
+			std::cout << "the bureaucrat grade is not high enough" << std::endl;
 	}
 }
 
@@ -46,9 +47,9 @@ Form::Form(std::string const &name, int grade2sign, int grade2exe) : _name(name)
 {
 	// grade2sign and grade2exe checking
 	if (grade2sign > 150 || grade2exe > 150)
-		throw GradeTooHighException();
-	if (grade2sign < 1 || grade2exe < 1)
 		throw GradeTooLowException();
+	if (grade2sign < 1 || grade2exe < 1)
+		throw GradeTooHighException();
 }
 
 Form & Form::operator=(const Form &rhs)
