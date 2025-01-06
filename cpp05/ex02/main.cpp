@@ -9,28 +9,28 @@
 void gradeTests(const std::string test_name, AForm &form, const Bureaucrat &low_grade, const Bureaucrat &high_grade) {
 	PrintHeader::printH1(test_name, BLUE);
 	std::cout << std::endl;
-	std::cout << BOLD "Execute unsigned form with: " << RED "NOT ENOUGH GRADE" C_RESET << std::endl;
+	std::cout << BOLD "Execute unsigned form with: " << RED "NOT ENOUGH GRADE" RESET << std::endl;
 	low_grade.executeForm(form);
 	std::cout << std::endl;
 
-	std::cout << BOLD "Sign unsigned form with: " << RED "NOT ENOUGH GRADE" C_RESET << std::endl;
+	std::cout << BOLD "Sign unsigned form with: " << RED "NOT ENOUGH GRADE" RESET << std::endl;
 	low_grade.signForm(form);
 	std::cout << std::endl;
 
-	std::cout << BOLD "Sign unsigned form with: " << GREEN "GRADE OK" C_RESET << std::endl;
+	std::cout << BOLD "Sign unsigned form with: " << GREEN "GRADE OK" RESET << std::endl;
 	high_grade.signForm(form);
 	std::cout << std::endl;
 
-	std::cout << BOLD "Execute signed form with: " << RED "NOT ENOUGH GRADE" C_RESET << std::endl;
+	std::cout << BOLD "Execute signed form with: " << RED "NOT ENOUGH GRADE" RESET << std::endl;
 	low_grade.executeForm(form);
 	std::cout << std::endl;
 
-	std::cout << BOLD "Execute signed form with: " << GREEN "GRADE OK" C_RESET << std::endl;
+	std::cout << BOLD "Execute signed form with: " << GREEN "GRADE OK" RESET << std::endl;
 	high_grade.executeForm(form);
 	std::cout << std::endl;
 }
 
-int main(void) {
+/* int main(void) {
 	PrintHeader::printH1("Create bureaucrats with different grades", BLUE);
 	Bureaucrat lowlyBureaucrat("Lowly Larry", 146);
 	Bureaucrat highBureaucrat("High Harry", 3);
@@ -59,4 +59,9 @@ int main(void) {
 
 	std::cout << std::endl;
 	return (0);
+} */
+
+int main()
+{
+
 }
