@@ -8,7 +8,7 @@ class Bureaucrat;
 
 class AForm
 {
-	private:
+	protected:
 		std::string _name;
 		bool _signed;
 		int _grade2sign;
@@ -36,7 +36,8 @@ class AForm
 		AForm(std::string const &name, int grade2sign, int grade2exe);
 		AForm & operator=(const AForm &rhs);
 		AForm (const AForm &rhs);
-		~AForm();
+		virtual ~AForm();
+		virtual void jklm() = 0; //!!!!!!!!!!!!!!!!!!! tmp !!!!!!!!!!!!
 };
 
 std::ostream & operator<<(std::ostream &out, const AForm &rhs);

@@ -64,5 +64,21 @@ int main(void) {
 int main()
 {
 	Bureaucrat vasia("Vasia", 100);
-	std::cout << vasia.getName () << " " <<  vasia.getGrade() << std::endl;
+	std::cout << vasia.getName () << " " << vasia.getGrade() << std::endl;
+
+	ShrubberyCreationForm b28("home");
+	AForm *b28A = &b28;
+	std::cout << b28A->getName() << " " << b28A->getSigned() << " " << b28A << " " << &b28 << std::endl;
+	std::cout << RED;
+	b28.jklm();
+	std::cout << RESET;
+	b28A->jklm();
+	ShrubberyCreationForm copy("job");
+	std::cout << copy.getName() << " the form " << copy.getName() << " for target: " << copy.getTargetName() << std::endl;
+	std::cout << GREEN;
+	copy = b28;
+	std::cout << copy.getName() << " this form is for target: " << copy.getTargetName() << std::endl;
+	std::cout << RESET;
+	ShrubberyCreationForm z(b28);
+	std::cout << BLUE;
 }
