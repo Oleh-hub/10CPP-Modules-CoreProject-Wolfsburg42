@@ -24,12 +24,17 @@ class AForm
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw();
+				virtual const char * what() const throw();
 		};
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char*what() const throw();
+				virtual const char * what() const throw();
+		};
+		class NotSignedException : public std::exception
+		{
+			public:
+				virtual const char * what() const throw();
 		};
 		void beSigned (const Bureaucrat &rhs);
 		
@@ -37,8 +42,10 @@ class AForm
 		AForm & operator=(const AForm &rhs);
 		AForm (const AForm &rhs);
 		virtual ~AForm();
-		virtual void jklm() = 0; //!!!!!!!!!!!!!!!!!!! tmp !!!!!!!!!!!!
+		// virtual void jklm() = 0; //!!!!!!!!!!!!!!!!!!! tmp !!!!!!!!!!!!
+		virtual void execute(Bureaucrat const & executor) const = 0;
 };
+		
 
 std::ostream & operator<<(std::ostream &out, const AForm &rhs);
 #endif //AForm.hpp

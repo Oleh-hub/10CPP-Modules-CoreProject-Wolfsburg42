@@ -17,7 +17,7 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 		AForm::operator=(rhs);
 		_target = rhs._target;
 	}
-	std::cout << "operator= function is been called for " << getName() << " " << this << " " << /* *this << */ std::endl;
+	std::cout << "operator= function is been called for " << getName() << " " << this << " " /* << *this  */<< std::endl;
 	return *this;
 }
 
@@ -31,9 +31,19 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << "ShrubberyCreationForm destructor was called " << this << std::endl;
 }
 
-void ShrubberyCreationForm::jklm() //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! tmp !!!!!!!!!!!!1
+/* void ShrubberyCreationForm::jklm() //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! tmp !!!!!!!!!!!!1
 {
 	std::cout << "ShrubberyCreationForm implements AForm class absolute virtual funciton jklm() " << this << std::endl;
+} */
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	if (!getSigned())
+		throw NotSignedException();
+	if (this->getGrade2exe() < executor.getGrade() )
+		throw GradeTooHighException();
+		/* ... */
+	std::cout << executor.getName() << " executed " << getName() << std::endl;
 }
 
 std::string ShrubberyCreationForm::getTargetName()
