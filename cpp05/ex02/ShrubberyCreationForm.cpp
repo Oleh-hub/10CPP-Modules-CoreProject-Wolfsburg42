@@ -31,22 +31,19 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << "ShrubberyCreationForm destructor was called " << this << std::endl;
 }
 
-/* void ShrubberyCreationForm::jklm() //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! tmp !!!!!!!!!!!!1
-{
-	std::cout << "ShrubberyCreationForm implements AForm class absolute virtual funciton jklm() " << this << std::endl;
-} */
-
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (!getSigned())
 		throw NotSignedException();
 	if (this->getGrade2exe() < executor.getGrade() )
 		throw GradeTooHighException();
-		/* ... */
+	std::string filename = getTargetName() + "_shrubbery";
+	// std::cout << filename << std::endl; // tracing
+	// std::ofstream
 	std::cout << executor.getName() << " executed " << getName() << std::endl;
 }
 
-std::string ShrubberyCreationForm::getTargetName()
+std::string ShrubberyCreationForm::getTargetName() const
 {
 	return _target;
 }

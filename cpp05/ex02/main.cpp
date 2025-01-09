@@ -72,9 +72,7 @@ int main()
 		AForm *b28A = &b28;
 		std::cout << b28A->getName() << " " << b28A->getSigned() << " " << b28A << " " << &b28 << std::endl;
 		std::cout << RED;
-		b28.jklm();
 		std::cout << RESET;
-		b28A->jklm();
 		ShrubberyCreationForm copy("job");
 		std::cout << copy.getName() << " the form " << copy.getName() << " for target: " << copy.getTargetName() << std::endl;
 		std::cout << GREEN;
@@ -82,6 +80,34 @@ int main()
 		std::cout << copy.getName() << " this form is for target: " << copy.getTargetName() << std::endl;
 		std::cout << RESET;
 		ShrubberyCreationForm z(b28);
+		
+		std::cout << std::endl << BOLD "CHECKING  ShrubberyCreationForm::execute(Bureaucrat const & executor) if NOT signed" RESET << std::endl;
+		b28.execute(vasia); //"The Form is not signed!" is trown
+		vasia.signAForm(b28);
+		std::cout << BLUE;
+
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	try
+	{
+		std::cout << std::endl << DIM "CHECKING  ShrubberyCreationForm::execute(Bureaucrat const & executor) if SIGNED" RESET << std::endl;
+		ShrubberyCreationForm b28("home");
+		Bureaucrat vasia("Vasia", 100);
+
+		std::cout << "Form " << b28.getName() << "has grade " << b28.qetGrade2sign() << std::endl;
+		std::cout << "Bureaucrat " << vasia.getName() << "has grade " << vasia.getGrade() << std::endl;
+		vasia.signAForm(b28);
+		b28.execute(vasia);
+
+		std::cout << std::endl << ITAL "CHECKING  ShrubberyCreationForm::execute(Bureaucrat const & executor) if SIGNED but BUREACRAT IS NOT HIGH EOUGH" RESET << std::endl;
+
+		Bureaucrat fedia("Fedia", 149);
+		std::cout << RED;
+		b28.execute(fedia);
 		std::cout << BLUE;
 	}
 	catch(const std::exception& e)
