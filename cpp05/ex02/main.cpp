@@ -63,9 +63,9 @@ int main(void) {
 
 int main()
 {
+	Bureaucrat vasia("Vasia", 100);
 	try
 	{
-		Bureaucrat vasia("Vasia", 100);
 		std::cout << vasia.getName () << " " << vasia.getGrade() << std::endl;
 
 		ShrubberyCreationForm b28("home");
@@ -123,6 +123,30 @@ int main()
 		PresidentialPardonForm pardonChik("Chikachillo");
 		std::cout << pardonChik << std::endl;
 		stjopa.executeForm(pardonChik);
-	
-
+		try
+		{
+			pardonChik.execute(stjopa);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		try
+		{
+			vasia.signAForm(pardonChik);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		try
+		{
+			stjopa.signAForm(pardonChik);
+			vasia.executeForm(pardonChik);
+			stjopa.executeForm(pardonChik);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 }
