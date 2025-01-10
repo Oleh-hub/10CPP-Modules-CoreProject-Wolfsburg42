@@ -1,5 +1,5 @@
 
-NAME	= form28B
+NAME	= beatit
 CC		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 CFLAGS += -Wpedantic
@@ -40,7 +40,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f home_shrubbery
 
 re: fclean all
 
