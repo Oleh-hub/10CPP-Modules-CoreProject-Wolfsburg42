@@ -42,7 +42,6 @@ class AForm
 		AForm & operator=(const AForm &rhs);
 		AForm (const AForm &rhs);
 		virtual ~AForm();
-		// virtual void jklm() = 0; //!!!!!!!!!!!!!!!!!!! tmp !!!!!!!!!!!!
 		virtual void execute(Bureaucrat const & executor) const = 0;
 };
 		
