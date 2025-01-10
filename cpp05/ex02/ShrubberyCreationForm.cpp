@@ -32,6 +32,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << "ShrubberyCreationForm destructor was called " << this << std::endl;
 }
 
+/* 
+	Creates a file <target>_shrubbery in the working directory, and writes ASCII trees inside it.
+ */
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (!getSigned())

@@ -116,10 +116,10 @@ int main()
 	}
 //	class PresidentialPardonForm check
 // try catch construction in Bureaucrat::executeForm() is being used.
+		Bureaucrat stjopa("Stjopa", 4);
 		std::cout << std::endl;
 		std::cout << RESET ULINE "class PresidentialPardonForm check" RESET << std::endl;
 		std::cout << std::endl;
-		Bureaucrat stjopa("Stjopa", 4);
 		PresidentialPardonForm pardonChik("Chikachillo");
 		std::cout << pardonChik << std::endl;
 		stjopa.executeForm(pardonChik);
@@ -144,6 +144,39 @@ int main()
 			stjopa.signAForm(pardonChik);
 			vasia.executeForm(pardonChik);
 			stjopa.executeForm(pardonChik);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	// RobotomyRequestForm tests
+		std::cout << std::endl;
+		std::cout << RESET BG_RED "class RobotomyRequestForm check" RESET << std::endl;
+		std::cout << std::endl;
+		RobotomyRequestForm iWantRobotomy("Chikachillo");
+		std::cout << iWantRobotomy << std::endl;
+		stjopa.executeForm(iWantRobotomy);
+		try
+		{
+			iWantRobotomy.execute(stjopa);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		try
+		{
+			vasia.signAForm(iWantRobotomy);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		try
+		{
+			stjopa.signAForm(iWantRobotomy);
+			vasia.executeForm(iWantRobotomy);
+			stjopa.executeForm(iWantRobotomy);
 		}
 		catch(const std::exception& e)
 		{

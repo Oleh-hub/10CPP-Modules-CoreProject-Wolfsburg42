@@ -10,6 +10,9 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout << "~PresidentialPardonForm() was called " << this << std::endl;
 }
 
+/* 
+	Informs that <target> has been pardoned by Zaphod Beeblebrox.
+ */
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if (!getSigned())

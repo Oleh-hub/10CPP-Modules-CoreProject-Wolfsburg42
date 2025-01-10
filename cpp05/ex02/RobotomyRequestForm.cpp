@@ -1,4 +1,5 @@
 #include "RobotomyRequestForm.hpp"
+#include <stdlib.h>
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
@@ -10,16 +11,22 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	std::cout << "~RobotomyRequestForm() was called " << this << std::endl;
 }
 
+/*
+Makes some drilling noises. Then, informs that <target> has been robotomized
+successfully 50% of the time. Otherwise, informs that the robotomy failed.
+*/
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	if (!getSigned())
 		throw NotSignedException();
 	if (this->getGrade2exe() < executor.getGrade() )
 		throw GradeTooHighException();
-	/* ... 
-	Makes some drilling noises. Then, informs that <target> has been robotomized
-successfully 50% of the time. Otherwise, informs that the robotomy failed.
-	*/
+	std::cout << "ZZZZZZZZZZZZZZZZZ" << std::endl;
+	// std::cout << RAND_MAX << std::endl;
+	if (rand() % 2)
+		std::cout << _target << "has been robotomized!" << std::endl;
+	else
+		std::cout << "Robotomy failed." << std::endl;
 	std::cout << executor.getName() << " executed " << getName() << std::endl;
 }
 
