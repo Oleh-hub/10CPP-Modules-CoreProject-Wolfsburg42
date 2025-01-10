@@ -1,4 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
@@ -38,8 +39,17 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	if (this->getGrade2exe() < executor.getGrade() )
 		throw GradeTooHighException();
 	std::string filename = getTargetName() + "_shrubbery";
-	// std::cout << filename << std::endl; // tracing
-	// std::ofstream
+	std::ofstream ofs(filename.c_str(), std::ofstream::out);
+	ofs << 	"       _-_\n"
+	   		"    /~~   ~~\\\n"
+	   		" /~~         ~~\\\n"
+	   		"{               }\n"
+	   		" \\  _-     -_  /\n"
+	   		"   ~  \\\\ //  ~\n"
+	   		"_- -   | | _- _\n"
+	   		"  _ -  | |   -_\n"
+	   		"      // \\\\";
+	ofs.close();
 	std::cout << executor.getName() << " executed " << getName() << std::endl;
 }
 
