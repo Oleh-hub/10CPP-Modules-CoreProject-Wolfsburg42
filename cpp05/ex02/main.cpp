@@ -114,7 +114,15 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
+//	class PresidentialPardonForm check
+// try catch construction in Bureaucrat::executeForm() is being used.
+		std::cout << std::endl;
+		std::cout << RESET ULINE "class PresidentialPardonForm check" RESET << std::endl;
+		std::cout << std::endl;
+		Bureaucrat stjopa("Stjopa", 4);
+		PresidentialPardonForm pardonChik("Chikachillo");
+		std::cout << pardonChik << std::endl;
+		stjopa.executeForm(pardonChik);
 	
 
 }
