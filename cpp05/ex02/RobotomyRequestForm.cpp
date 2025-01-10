@@ -16,7 +16,10 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		throw NotSignedException();
 	if (this->getGrade2exe() < executor.getGrade() )
 		throw GradeTooHighException();
-	/* ... */
+	/* ... 
+	Makes some drilling noises. Then, informs that <target> has been robotomized
+successfully 50% of the time. Otherwise, informs that the robotomy failed.
+	*/
 	std::cout << executor.getName() << " executed " << getName() << std::endl;
 }
 
@@ -34,4 +37,9 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &rhs) : AForm(rhs), _target(rhs._target)
 {
 	std::cout << "RobotomyRequestForm copy constructor was called " << this << std::endl;
+}
+
+const std::string & RobotomyRequestForm::getTargetName() const
+{
+	return _target;
 }

@@ -1,6 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 72, 45), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
 	std::cout << "PresidentialPardonForm constructor with parameter was called " << this << std::endl;
 }
@@ -16,7 +16,7 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 		throw NotSignedException();
 	if (this->getGrade2exe() < executor.getGrade() )
 		throw GradeTooHighException();
-	/* ... */
+	std::cout << getTargetName() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	std::cout << executor.getName() << " executed " << getName() << std::endl;
 }
 
@@ -34,4 +34,9 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs) : AForm(rhs), _target(rhs._target)
 {
 	std::cout << "PresidentialPardonForm copy constructor was called " << this << std::endl;
+}
+
+const std::string & PresidentialPardonForm::getTargetName() const
+{
+	return _target;
 }
