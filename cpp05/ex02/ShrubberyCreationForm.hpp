@@ -16,6 +16,6 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm & operator=(const ShrubberyCreationForm &rhs);
 		~ShrubberyCreationForm();
 		std::string getTargetName() const;
-		virtual void execute(Bureaucrat const & executor) const; // the function is made absulute abstuct, since all the children classes R supposed 2 do different things
+		virtual void execute(Bureaucrat const & executor) const;
 };
 #endif // SHRUBBERYCREATIONFORM_HPP

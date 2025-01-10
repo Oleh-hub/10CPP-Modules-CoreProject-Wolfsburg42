@@ -42,7 +42,7 @@ class AForm
 		AForm & operator=(const AForm &rhs);
 		AForm (const AForm &rhs);
 		virtual ~AForm();
-		virtual void execute(Bureaucrat const & executor) const = 0;
+		virtual void execute(Bureaucrat const & executor) const = 0;  // the function is made absulute abstuct, since all the children classes R supposed 2 do different things
 };
 		
 
