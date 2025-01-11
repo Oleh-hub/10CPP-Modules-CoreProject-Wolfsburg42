@@ -2,27 +2,27 @@
 
 Intern::Intern()
 {
-	std::cout << "Default constructor Intern() is been called." << std::endl;
+	// std::cout << "Default constructor Intern() is been called." << std::endl;
 }
 
 // just could not implement it if declared as '= default'
 Intern::Intern(const Intern &rhs)
 {
 	*this = rhs;
-	std::cout << "Copy constructor Intern(const Intern &rhs) is been called." << std::endl;
+	// std::cout << "Copy constructor Intern(const Intern &rhs) is been called." << std::endl;
 }
 
 // just could not implement it if declared as '= default'
 Intern & Intern::operator=(const Intern &rhs)
 {
 	(void) rhs;
-	std::cout << "Intern::operator=() was called." << std::endl;
+	// std::cout << "Intern::operator=() was called." << std::endl;
 	return *this;
 }
 
 Intern::~Intern()
 {
-	std::cout << "Destructor ~Intern() is been called." << std::endl;
+	// std::cout << "Destructor ~Intern() is been called." << std::endl;
 }
 
 /*
@@ -40,8 +40,8 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
 	{
 		if (formsName[i] == formName)
 		{
-			std::cout << "Intern creates " << formName << "." << std::endl;
-			std::cout << "The form is targeting: " << target << "." << std::endl;
+			std::cout << "Intern creates '" << formName << "'." << std::endl;
+			// std::cout << "The form is targeting: " << target << "." << std::endl;
 			switch (i)
 			{
 				case (0):
@@ -53,7 +53,7 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
 			}
 		}
 	}
-	std::cout << "The Intern unable to create form " << formName << "." << std::endl;
+	std::cout << "The Intern unable to create form '" << formName << "'." << std::endl;
 	std::cout << "Try one of these three: ShrubberyCreationForm, RobotomyRequestForm, PresidentialPardonForm instead." << std::endl;
 	return NULL;
 }

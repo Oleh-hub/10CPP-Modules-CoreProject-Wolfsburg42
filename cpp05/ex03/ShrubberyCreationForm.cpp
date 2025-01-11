@@ -3,7 +3,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
-	std::cout << "ShrubberyCreationForm name consturctor was called with target _name: " << getTargetName() << " " << this << std::endl;
+	// std::cout << "ShrubberyCreationForm name consturctor was called with target _name: " << getTargetName() << " " << this << std::endl;
 }
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
@@ -18,18 +18,18 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 		AForm::operator=(rhs);
 		_target = rhs._target;
 	}
-	std::cout << "operator= function is been called for " << getName() << " " << this << " " /* << *this  */<< std::endl;
+	// std::cout << "operator= function is been called for " << getName() << " " << this << " " /* << *this  */<< std::endl;
 	return *this;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &rhs) : AForm(rhs), _target(rhs._target)
 {
-	std::cout << "ShrubberyCreationForm copy constuctor was called " << this << std::endl;
+	// std::cout << "ShrubberyCreationForm copy constuctor was called " << this << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "ShrubberyCreationForm destructor was called " << this << std::endl;
+	// std::cout << "ShrubberyCreationForm destructor was called " << this << std::endl;
 }
 
 /* 

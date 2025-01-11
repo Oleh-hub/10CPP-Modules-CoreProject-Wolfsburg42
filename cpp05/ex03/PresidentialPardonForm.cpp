@@ -2,12 +2,12 @@
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
-	std::cout << "PresidentialPardonForm constructor with parameter was called " << this << std::endl;
+	// std::cout << "PresidentialPardonForm constructor with parameter was called " << this << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "~PresidentialPardonForm() was called " << this << std::endl;
+	// std::cout << "~PresidentialPardonForm() was called " << this << std::endl;
 }
 
 /* 
@@ -30,13 +30,13 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
 		AForm::operator=(rhs);
 		_target = rhs._target;
 	}
-	std::cout << "PresidentialPardonForm::operator= was called " << this << std::endl;
+	// std::cout << "PresidentialPardonForm::operator= was called " << this << std::endl;
 	return *this;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs) : AForm(rhs), _target(rhs._target)
 {
-	std::cout << "PresidentialPardonForm copy constructor was called " << this << std::endl;
+	// std::cout << "PresidentialPardonForm copy constructor was called " << this << std::endl;
 }
 
 const std::string & PresidentialPardonForm::getTargetName() const
