@@ -34,5 +34,26 @@ but only if the formName -s are indicated correctly!
 */
 AForm *Intern::makeForm(const std::string &formName, const std::string &target)
 {
-
+	std::string formsName[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	
+	for (int i = 0; i < 3; i++)
+	{
+		if (formsName[i] == formName)
+		{
+			std::cout << "Intern creates " << formName << "." << std::endl;
+			std::cout << "The form is targeting: " << target << "." << std::endl;
+			switch (i)
+			{
+				case (0):
+					return new ShrubberyCreationForm(target);
+				case (1):
+					return new RobotomyRequestForm(target);
+				case (2):
+					return new PresidentialPardonForm(target);
+			}
+		}
+	}
+	std::cout << "The Intern unable to create form " << formName << "." << std::endl;
+	std::cout << "Try one of these three: ShrubberyCreationForm, RobotomyRequestForm, PresidentialPardonForm instead." << std::endl;
+	return NULL;
 }
