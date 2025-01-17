@@ -3,6 +3,7 @@
 # include <iostream>
 # include <string>
 # include <sstream>
+# include <cstdio> // EOF
 # include "Colors.hpp"
 
 class ScalarConverter
@@ -13,11 +14,11 @@ class ScalarConverter
 		
 		enum eScalarType
 		{
-			CHAR,
-			INT,
-			FLOAT,
-			DOUBLE,
-			INVALID
+			CHAR,		// 0
+			INT,		// 1
+			FLOAT,		// 2
+			DOUBLE,		// 3
+			INVALID		// 4
 		};
 		ScalarConverter();
 		~ScalarConverter();

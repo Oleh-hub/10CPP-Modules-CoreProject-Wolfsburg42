@@ -11,25 +11,34 @@ ScalarConverter & ScalarConverter::operator=(ScalarConverter &rhs)
 	return *this;
 }
 
+// findes out in what format was made input (for example: 'a', 1, 1.1f, 1.1 or somthing else.)
 ScalarConverter::eScalarType ScalarConverter::getType(const std::string &str)
 {
 	//Удобство извлечения данных(>>), Обработка ошибок, Пошаговый анализ строки
 	std::istringstream iss(str); //  "input string stream" (поток ввода из строки) - makes the work with string easier
-	int b4Dot;					// number from iss b4 dot '.'
-	char dot;
+	int		b4Dot;					// number from iss b4 dot '.'
+	char 	dot;
+	int 	afterDot;
+	char 	f;
 
-	std::cout << RED "DEBUG getType(): str = "  << str << "; length() = " << str.length() << RESET << std::endl;
+	// std::cout << RED "DEBUG getType(): str = "  << str << "; length() = " << str.length() << RESET << std::endl; // debug
 	if (str.length() == 1 && !std::isdigit(str[0]))
 		return CHAR;
-	
 	if (iss >> b4Dot)
 	{
-		std::cout << BLUE << b4Dot << RESET << std::endl;
 		if (iss.eof())
 			return INT;
-
-		// if ()
-
+		iss >> dot;
+		if (dot == '.' && iss.peek() != EOF) // peek() возвращает следующий символ в потоке ввода, не извлекая его.
+		{
+			iss >> afterDot;
+			// if (iss.eof())
+			if (iss.peek() == EOF)
+				return DOUBLE;
+			iss >> f;
+			if (f == 'f' && iss.peek() == EOF)
+				return FLOAT;
+		}	
 	}
 	return INVALID;
 }
@@ -38,31 +47,24 @@ void ScalarConverter::convert(const std::string &str)
 {
 	std::cout << "String representation of a C++ literal: " << str << std::endl;
 	eScalarType scalarType = getType(str);
-	(void) scalarType;
 
-	// eScalarType scalarType1[] = {CHAR, INT, FLOAT, DOUBLE, INVALID};
-	for (int i = 0; i < 5; i++)
+	std::cout << scalarType << std::endl;
+	switch (scalarType)
 	{
-		// eScalarType scalarType = type[i];
-		{
-			switch (scalarType)
-			{
-				case (CHAR):
-					std::cout << scalarType << std::endl;
-					break;
-				case (INT):
-					std::cout << scalarType << std::endl;
-					break;
-				case (FLOAT):
-					std::cout << scalarType << std::endl;
-					break;
-				case (DOUBLE):
-					std::cout << scalarType << std::endl;
-					break;
-				case (INVALID):
-					std::cout << scalarType << std::endl;
-					break;
-			}
-		}
+		case (CHAR):
+			std::cout << "CHAR" << std::endl;
+			break;
+		case (INT):
+			std::cout << "INT" << std::endl;
+			break;
+		case (FLOAT):
+			std::cout << "FLOAT" << std::endl;
+			break;
+		case (DOUBLE):
+			std::cout << "DOUBLE" << std::endl;
+			break;
+		case (INVALID):
+			std::cout << "INVALID" << std::endl;
+			break;
 	}
 }
