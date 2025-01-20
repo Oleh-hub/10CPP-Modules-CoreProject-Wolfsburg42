@@ -8,5 +8,4 @@ int main(int an, char **ac)
 		return 1;
 	}
 	ScalarConverter::convert(ac[1]);
-
 }
