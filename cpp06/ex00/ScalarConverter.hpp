@@ -4,6 +4,7 @@
 # include <string>
 # include <sstream>
 # include <cstdio> // EOF
+# include <cctype> // isprint	
 # include "Colors.hpp"
 
 class ScalarConverter
@@ -20,6 +21,13 @@ class ScalarConverter
 			DOUBLE,		// 3
 			INVALID		// 4
 		};
+		
+		// print out "char | int | float | douple: impossible"
+		static void printImpossible();
+		
+		// Статические методы Можно вызывать без создания объекта: MyClass::method();
+		static void convertChar(const std::string & str);
+		
 		ScalarConverter();
 		~ScalarConverter();
 

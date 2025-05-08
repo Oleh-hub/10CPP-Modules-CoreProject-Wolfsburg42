@@ -31,16 +31,43 @@ ScalarConverter::eScalarType ScalarConverter::getType(const std::string &str)
 		iss >> dot;
 		if (dot == '.' && iss.peek() != EOF) // peek() возвращает следующий символ в потоке ввода, не извлекая его.
 		{
-			iss >> afterDot;
-			// if (iss.eof())
-			if (iss.peek() == EOF)
+			if (iss >> afterDot)
+			{
+				// if (iss.eof())
+				if (iss.peek() == EOF)
 				return DOUBLE;
-			iss >> f;
-			if (f == 'f' && iss.peek() == EOF)
+				iss >> f;
+				if (f == 'f' && iss.peek() == EOF)
 				return FLOAT;
+			}
 		}	
 	}
 	return INVALID;
+}
+
+void ScalarConverter::printImpossible()
+{
+	std::cout << "char:	impossible" << std::endl;
+	std::cout << "int:	impossible" << std::endl;
+	std::cout << "float:	impossible" << std::endl;
+	std::cout << "double:	impossible" << std::endl;
+}
+
+void ScalarConverter::convertChar(const std::string &str)
+{
+	std::istringstream iss(str); // апуск конструктора класса istringsrream которым инициируется iss значением строки str
+	char c;
+	
+	if (iss >> c)
+	{
+		if (isprint(c))
+		{
+			
+			std::cout << "char: '" << str << "'" << std::endl;
+		}
+	}
+	else
+		printImpossible();
 }
 
 void ScalarConverter::convert(const std::string &str)
@@ -48,11 +75,12 @@ void ScalarConverter::convert(const std::string &str)
 	std::cout << "String representation of a C++ literal: " << str << std::endl;
 	eScalarType scalarType = getType(str);
 
-	std::cout << scalarType << std::endl;
+	std::cout << "DEBUG: " << scalarType << std::endl;
 	switch (scalarType)
 	{
 		case (CHAR):
 			std::cout << "CHAR" << std::endl;
+			convertChar(str);
 			break;
 		case (INT):
 			std::cout << "INT" << std::endl;
@@ -64,7 +92,8 @@ void ScalarConverter::convert(const std::string &str)
 			std::cout << "DOUBLE" << std::endl;
 			break;
 		case (INVALID):
-			std::cout << "INVALID" << std::endl;
+			std::cout << "DEBUG: INVALID" << std::endl;
+			printImpossible();
 			break;
-	}
+		}
 }
