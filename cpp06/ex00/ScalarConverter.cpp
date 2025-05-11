@@ -62,8 +62,10 @@ void ScalarConverter::convertChar(const std::string &str)
 	{
 		if (isprint(c))
 		{
-			
-			std::cout << "char: '" << str << "'" << std::endl;
+			std::cout << "char:  '" << str << "'" << std::endl;
+			std::cout << "int:    " << static_cast<int> (c) << std::endl; 
+			std::cout << "float:  " << static_cast<float> (c)<< ".0f" << std::endl;
+			std::cout << "double: "	<< static_cast<double> (c)<< ".0" << std::endl;
 		}
 	}
 	else
