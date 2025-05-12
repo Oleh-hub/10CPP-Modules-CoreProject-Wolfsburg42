@@ -27,6 +27,7 @@ class ScalarConverter
 		
 		// Статические методы Можно вызывать без создания объекта: MyClass::method();
 		static void convertChar(const std::string & str);
+		static void convertInvalid(const std::string &str);
 		
 		ScalarConverter();
 		~ScalarConverter();

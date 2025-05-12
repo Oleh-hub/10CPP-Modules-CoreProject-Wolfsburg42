@@ -72,6 +72,29 @@ void ScalarConverter::convertChar(const std::string &str)
 		printImpossible();
 }
 
+void ScalarConverter::convertInvalid(const std::string &str)
+{
+	std::cout << "char:	impossible" << std::endl;
+	std::cout << "int:	impossible" << std::endl;
+	if ( str == "nan" || str == "nanf")
+	{
+		std::cout << "float:  nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+	}
+	else	
+		if (str == "-inf" || str == "-inff")
+		{
+			std::cout << "float:  -inff" << std::endl;
+			std::cout << "double: -inf" << std::endl;
+		}
+		else 
+			if (str == "+inf" || str == "+inff")
+			{
+				std::cout << "float:  +inff" << std::endl;
+				std::cout << "double: +inf" << std::endl;
+			}
+}
+
 void ScalarConverter::convert(const std::string &str)
 {
 	std::cout << "String representation of a C++ literal: " << str << std::endl;
@@ -95,7 +118,7 @@ void ScalarConverter::convert(const std::string &str)
 			break;
 		case (INVALID):
 			std::cout << "DEBUG: INVALID" << std::endl;
-			printImpossible();
+			convertInvalid(str);
 			break;
 		}
 }
