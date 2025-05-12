@@ -72,6 +72,7 @@ void ScalarConverter::convertChar(const std::string &str)
 		printImpossible();
 }
 
+//  case 
 void ScalarConverter::convertInvalid(const std::string &str)
 {
 	std::cout << "char:	impossible" << std::endl;
@@ -92,6 +93,11 @@ void ScalarConverter::convertInvalid(const std::string &str)
 			{
 				std::cout << "float:  +inff" << std::endl;
 				std::cout << "double: +inf" << std::endl;
+			}
+			else
+			{
+				std::cout << "float:	impossible" << std::endl;
+				std::cout << "double:	impossible" << std::endl;
 			}
 }
 
@@ -117,7 +123,6 @@ void ScalarConverter::convert(const std::string &str)
 			std::cout << "DOUBLE" << std::endl;
 			break;
 		case (INVALID):
-			std::cout << "DEBUG: INVALID" << std::endl;
 			convertInvalid(str);
 			break;
 		}
